@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 
 export default function Contact() {
-  return (
+            
+
+return (
     <div
       id="contact"
       style={{
@@ -16,14 +18,16 @@ export default function Contact() {
     >
       <Container>
         <Row>
+
           <Col sm="6">
-            <img src="../img/contact.png" alt="logo" width={500} height="auto" />
+            <img src="../img/contact.jpg" alt="logo" width={500} height="auto" />        
+
           </Col>
           <Col sm="6">
             <h1 style={{ textAlign: 'center', paddingTop: 50 }}>VÕTA MEIEGA ÜHENDUST</h1>
             <p style={{ fontSize: 30, marginTop: 100, textAlign: 'right' }}>
               Alvateamiga ühenduse võtmiseks täitke allolev kontaktvorm. Teise võimalusena võite
-              meile helistada numbril +372 658 956 või kirjutada meile aadressil info@alva.ee
+              meile helistada numbril +372 658 956 või kirjutada meile e-post info@alva.ee
               <br />
               Aadress: Harjumaa, Tallinn, Akadeemia tee 5
             </p>

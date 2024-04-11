@@ -49,7 +49,7 @@ export default function Reserveerimine() {
             </Button>
           </Col>
           <Col sm="6">
-            <img src="../img/reserv.png" alt="logo" width={500} height="auto" />
+            <img src="../img/reserv.jpg" alt="logo" width={500} height="auto" />
           </Col>
         </Row>
       </Container>
