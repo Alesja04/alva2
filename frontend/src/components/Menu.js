@@ -6,7 +6,8 @@ export default function Menu() {
     <div
       id="menu"
       style={{
-        paddingTop: 100,
+        paddingTop: 50,
+        paddingBottom: 100,
         height: 'auto',
         width: 'auto',
         fontFamily: 'Buda',
@@ -14,9 +15,9 @@ export default function Menu() {
       }}
     >
       <Container>
-        <h1 style={{ textAlign: 'center', paddingTop: 50 }}>MENÜÜ</h1>
+        <h1 style={{ textAlign: 'center', paddingTop: 30 }}>MENÜÜ</h1>
 
-        <Row style={{ paddingTop: 50 }}>
+        <Row style={{ paddingTop: 30 }}>
           <Col style={{ paddingTop: 15 }}>
             <a href="/pasta">
               <img src="../img/pasta.png" alt="logo" width={600} height={300} />

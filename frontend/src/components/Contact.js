@@ -8,7 +8,8 @@ return (
     <div
       id="contact"
       style={{
-        paddingTop: 100,
+        // paddingTop: 50,
+        // paddingBottom: 100,
         height: 'auto',
         width: 'auto',
         backgroundSize: 'cover',
@@ -20,7 +21,7 @@ return (
         <Row>
 
           <Col sm="6">
-            <img src="../img/contact.jpg" alt="logo" width={500} height="auto" />        
+        <img src="../img/contact.jpg" alt="kontakt" width={450} height="auto" />        
 
           </Col>
           <Col sm="6">

@@ -7,7 +7,7 @@ export default function About() {
     <Container
       id="meist"
       style={{
-        paddingTop: 100,
+        paddingTop: 50,
 
         height: 'auto',
         width: 'auto',
