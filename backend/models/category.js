@@ -1,24 +1,21 @@
 import db from "../config/database.js";
 import { DataTypes, Model } from "sequelize";
-class User extends Model {}
-User.init(
+class Category extends Model {}
+Category.init(
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    name: { type: DataTypes.STRING },
-    email: { type: DataTypes.STRING },
-    password: { type: DataTypes.STRING },
-    role: { type: DataTypes.STRING },
+    name: { type: DataTypes.STRING }
   },
   {
     sequelize: db,
-    tableName: "user",
+    tableName: "category",
     freezeTableName: true,
-    modelName: "User",
+    modelName: "Category",
     timestamp: true,
   }
 );
-export default User;
+export default Category;

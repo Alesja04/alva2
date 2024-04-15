@@ -1,7 +1,7 @@
 import db from "../config/database.js";
 import { DataTypes, Model } from "sequelize";
-class User extends Model {}
-User.init(
+class Tovar extends Model {}
+Tovar.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -9,16 +9,16 @@ User.init(
       primaryKey: true,
     },
     name: { type: DataTypes.STRING },
-    email: { type: DataTypes.STRING },
-    password: { type: DataTypes.STRING },
-    role: { type: DataTypes.STRING },
+    img: { type: DataTypes.STRING },
+    price: { type: DataTypes.FLOAT },
+    category_id: { type: DataTypes.STRING },
   },
   {
     sequelize: db,
-    tableName: "user",
+    tableName: "tovar",
     freezeTableName: true,
-    modelName: "User",
+    modelName: "Tovar",
     timestamp: true,
   }
 );
-export default User;
+export default Tovar;
