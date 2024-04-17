@@ -4,7 +4,7 @@ import {Login, Logout} from '../controllers/userController.js';
 // import { refreshToken } from '../controllers/refreshToken.js';
 const userrouter = express.Router();
 
-userrouter.post('/users', Login);
-userrouter.delete('/logout', Logout);
+// userrouter.post('/users', Login);
+// userrouter.delete('/logout', Logout);
 
 export default userrouter;

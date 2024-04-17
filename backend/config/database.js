@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const db = new Sequelize('konditer', 'root', '', {
+const db = new Sequelize('alva', 'root', '', {
  host: 'localhost',
  dialect: 'mysql',
 });
