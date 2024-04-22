@@ -29,7 +29,7 @@
   <li>Зайти в созданную папку и открыть консоль (правой кнопкой мыши и в списке найти Open Git Bash here).</li>
   <li>Прописать команду "git clone https://github.com/Alesja04/alva2". Далее загрузиться проект в созданную Вами папку.</li>
   <li><b>Если у Вас на компьютере есть xampp можете данный шаг пропустить. </b>Если у Вас на компьютере нет xampp, то можете установить с данного сайта https://www.apachefriends.org/download.html . И далее его устанавливете.</li>
-  <li><b>Также если у Вас на компьютере есть NodeJS можете данный шаг пропустить. </b>Если у Вас на компьютере нет NodeJs, то можете установить с данного сайта [https://www.apachefriends.org/download.html](https://nodejs.org/en/download) . И далее его устанавливете.</li>
+  <li><b>Также если у Вас на компьютере есть NodeJS можете данный шаг пропустить. </b>Если у Вас на компьютере нет NodeJs, то можете установить с данного сайта https://nodejs.org/en/download . И далее его устанавливете.</li>
   <li>Далее ищете и запускаете xampp-control -><b> Apache</b> - Start -> <b>MySQL</b> - Start</li> <img  width='300px' src="https://devtuts.butlerccwebdev.net/testserver/xampp-control-panel.png"></img>
   <li>В строчке MySQL нажать админ и откроется консоль phpMyAdmin.</li>
   <li>Создать базу данных с именем "alva". Открыть эту базу данных и сделать Import базы данных.(базу данных можно найти в проекте, который скачали файл alva.sql)</li> 
