@@ -1,5 +1,5 @@
 <h1 align="center">ALVA</h1>
-![Image alt](https://github.com/Alesja04/alva2/blob/master/frontend/public/img/logo.png)
+<img src="https://github.com/Alesja04/alva2/blob/master/frontend/public/img/logo.png"</img>
 <p>Сайт созданный для уютного кафе.</p>
 <p>На нашем сайте вы можете посмотреть всю информацию об этом кафе, оформить доставку выбранных вами блюд, зарезервировать столик,зарегестрироваться на мастерклассы и посмотреть меню .</p>
 <p><b>Наши разработчики:</b> 
