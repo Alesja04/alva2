@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 11:08 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Хост: 127.0.0.1
+-- Время создания: Апр 24 2024 г., 12:32
+-- Версия сервера: 10.4.28-MariaDB
+-- Версия PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `alva`
+-- База данных: `alva`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Структура таблицы `category`
 --
 
 CREATE TABLE `category` (
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `category`
+-- Дамп данных таблицы `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `category` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `delivery`
+-- Структура таблицы `delivery`
 --
 
 CREATE TABLE `delivery` (
@@ -64,7 +64,7 @@ CREATE TABLE `delivery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tovar`
+-- Структура таблицы `tovar`
 --
 
 CREATE TABLE `tovar` (
@@ -78,45 +78,45 @@ CREATE TABLE `tovar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tovar`
+-- Дамп данных таблицы `tovar`
 --
 
 INSERT INTO `tovar` (`id`, `name`, `img`, `price`, `category_id`, `createdAt`, `updatedAt`) VALUES
-(1, 'PANACOTA', './img/pan.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'PIIMAKOOK MAASIKAGA', './img/pim.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'MANGOMAHL 0.25l', './img/mango.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'ARBUUSIMAHL 0.25l', './img/arb.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 'ALKOHOLIVABA MOJITO 0.25l', './img/moh.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(6, 'LIMONAAD 0.25l', './img/lim.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(7, 'COCA COLA 0.25l', './img/col.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(8, 'KREEKA SALAT', './img/krek.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, 'KREEKA SALAT KANAGA', './img/kre.png', 5, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(10, 'PUUVILJA SALAT', './img/puu.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(11, 'OLIVER KANAGA', './img/oli.png', 9, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(12, 'PASTA KANAGA', './img/kana.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(13, 'PASTA TOMATIGA', './img/toma.png', 5, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(14, 'PASTA ŠAMPJONIDEGA', './img/shamp.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(15, 'PASTA MEREANDIDEGA', './img/mere.png', 9, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(16, 'PASTA VORSTIGA', './img/vorst.png', 8, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(17, 'JUUSTUSTALDIK', './img/just.png', 8, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(18, 'NACHOS', './img/nach.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(19, 'FRIIKARTULID', './img/fri.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(20, 'KANATIIVAD', './img/kan.png', 8, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(21, 'MOZZARELLA PULGAD', './img/moz.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(22, 'JUUSTUKORK', './img/jus.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(23, 'VANILLJÄÄTIS', './img/van.png', 5, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(24, 'BELGIA VAHVLID', './img/bel.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(25, 'Köögiviljasalat', './img/koog.png', 8, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(26, 'TIRAMISU', './img/tir.png', 5, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(27, 'PASTA CARBONARRA', './img/karb.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(28, 'APELSINIMAHL 0.25l', './img/apel.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(29, 'SIBULARÕNGAD', './img/sib.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(30, 'CAESAR KANAGA', './img/cesar.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 'PANACOTA1', '../img/pan.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'PIIMAKOOK MAASIKAGA', '../img/pim.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'MANGOMAHL 0.25l', '../img/mango.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'ARBUUSIMAHL 0.25l', '../img/arb.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'ALKOHOLIVABA MOJITO 0.25l', '../img/moh.png', 4, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 'LIMONAAD 0.25l', '../img/lim.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'COCA COLA 0.25l', '../img/col.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'KREEKA SALAT', '../img/krek.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'KREEKA SALAT KANAGA', '../img/kre.png', 5, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 'PUUVILJA SALAT', '../img/puu.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'OLIVER KANAGA', '../img/oli.png', 9, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(12, 'PASTA KANAGA', '../img/kana.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(13, 'PASTA TOMATIGA', '../img/toma.png', 5, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, 'PASTA ŠAMPJONIDEGA', '../img/shamp.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 'PASTA MEREANDIDEGA', '../img/mere.png', 9, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 'PASTA VORSTIGA', '../img/vorst.png', 8, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(17, 'JUUSTUSTALDIK', '../img/just.png', 8, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, 'NACHOS', '../img/nach.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'FRIIKARTULID', '../img/fri.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(20, 'KANATIIVAD', '../img/kan.png', 8, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(21, 'MOZZARELLA PULGAD', '../img/moz.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(22, 'JUUSTUKORK', '../img/jus.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, 'VANILLJÄÄTIS', '../img/van.png', 5, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(24, 'BELGIA VAHVLID', '../img/bel.png', 4, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(25, 'Köögiviljasalat', '../img/koog.png', 8, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(26, 'TIRAMISU', '../img/tir.png', 5, '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 'PASTA CARBONARRA', '../img/karb.png', 7, '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(28, 'APELSINIMAHL 0.25l', '../img/apel.png', 3, '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 'SIBULARÕNGAD', '../img/sib.png', 5, '5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(30, 'CAESAR KANAGA', '../img/cesar.png', 7, '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Структура таблицы `user`
 --
 
 CREATE TABLE `user` (
@@ -130,57 +130,57 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `category`
+-- Индексы таблицы `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `delivery`
+-- Индексы таблицы `delivery`
 --
 ALTER TABLE `delivery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tovar`
+-- Индексы таблицы `tovar`
 --
 ALTER TABLE `tovar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Индексы таблицы `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `delivery`
+-- AUTO_INCREMENT для таблицы `delivery`
 --
 ALTER TABLE `delivery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tovar`
+-- AUTO_INCREMENT для таблицы `tovar`
 --
 ALTER TABLE `tovar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

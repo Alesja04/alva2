@@ -24,7 +24,7 @@ export default function Salatid() {
           backgroundColor: "#B5D6DA",
         }}
       >
-        <Container className="text-center">
+        <Container className="text-center pb-3">
           <h1 style={{ textAlign: "center", paddingTop: 50 }}>Salatid</h1>
   
           <Row style={{ paddingTop: 50 }}>

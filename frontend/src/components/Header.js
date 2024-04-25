@@ -17,7 +17,7 @@ export default function Header() {
       >
         <Nav>
           <Nav.Link href="/">
-            <img src="./img/logo.png" alt="logo" width={130} height={50} />
+            <img src="../img/logo.png" alt="logo" width={130} height={50} />
           </Nav.Link>
 
           <Nav.Link href="/#meist">MEIST</Nav.Link>
