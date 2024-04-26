@@ -8,6 +8,7 @@ import Home from '../pages/Home.js';
 // import Magusad from '../pages/Magusad.js';
 import Delivery from '../pages/Delivery.js';
 import Tooded from '../pages/Tooded.js';
+import Klassid from '../pages/Klassid.js';
 //----------
 //import MainScreen from '../components/MainScreen';
 //import Menu from '../components/Menu';
@@ -31,6 +32,7 @@ export default function Content() {
           <Route exact path="/suupisted" element={<Suupisted />} />
           <Route exact path="/magusad" element={<Magusad />} /> */}
           <Route exact path="/korzina" element={<Delivery />} />
+          <Route exact path="/klassid" element={<Klassid />} />
         </Routes>
       </Router>
     </>
