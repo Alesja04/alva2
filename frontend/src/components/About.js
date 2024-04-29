@@ -22,13 +22,9 @@ export default function About() {
         </Col>
         <Col sm="6">
           <p style={{ fontSize: 30, textAlign: 'left', paddingTop: 50, paddingRight: 30 }}>
-            Alva on Eesti juhtiva restoranigrupi ja tegevkokk Edvard Calleni looming. Üks riigi
-            kuulsamaid restorane, Alva on 22 aastat järjest saanud Good Food Guide'is kolm mütsi.
-            <br />
-            <br />
-            Restoran on orgaaniline ruum, mis peegeldab Edvard Calleni loodusest inspireeritud
-            kööki. Tekstuuride ja värvide koosmõju toob elu ja erksuse, mis hõlmab restorani oma.
-            <br />
+          Edward Kalen on pikaajalise kogemusega ettevõtja.<br />
+          Pärast hotellinduse juhtimise eriala lõpetamist töötas ta mitu aastat suurtes kohviku- ja restoranikettides, omandades väärtuslikke kogemusi juhtimise ja äriarenduse alal.<br /> 
+          Kvaliteedile ja originaalsusele pühendudes lõi Edward Kalen ainulaadse kohviku, mis ei oleks mitte ainult koht, kus süüa, vaid ka kohtumis-, töö- ja inspiratsioonikoht
           </p>
         </Col>
       </Row>

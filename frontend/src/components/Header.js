@@ -19,14 +19,16 @@ export default function Header() {
           <Nav.Link href="/">
             <img src="../img/logo.png" alt="logo" width={130} height={50} />
           </Nav.Link>
+          
+          <Nav.Link style={{paddingTop: '20px'}} href="/#meist">MEIST</Nav.Link>
+          <Nav.Link style={{paddingTop: '20px'}} href="/#menu">MENÜÜ</Nav.Link>
+          <Nav.Link style={{paddingTop: '20px'}} href="/#contact">KONTAKTID</Nav.Link>
+          <Nav.Link style={{paddingTop: '20px'}} href="/#reserveerimine">RESERVEERIMINE</Nav.Link>
 
-          <Nav.Link href="/#meist">MEIST</Nav.Link>
-          <Nav.Link href="/#menu">MENÜÜ</Nav.Link>
-          <Nav.Link href="/#contact">KONTAKTID</Nav.Link>
-          <Nav.Link href="/#reserveerimine">RESERVEERIMINE</Nav.Link>
           <Nav.Link href="/korzina">            
             <img src="../img/tar.png" alt="logo" width={60} height={50} />
           </Nav.Link>
+       
         </Nav>
       </Navbar>
     </header>

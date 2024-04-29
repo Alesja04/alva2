@@ -6,7 +6,6 @@ export default function Klassid() {
   const [nimi, setNimi] = useState("");
   const [perekonnanimi, setPerekonnanimi] = useState("");
   const [telefoninumber, setTelefoninumber] = useState("");
-  const [aadress, setAadress] = useState("");
   const [msg, setMsg] = useState("");
 
   const RegForm = async (e) => {
@@ -16,7 +15,6 @@ export default function Klassid() {
         nimi: nimi,
         perekonnanimi: perekonnanimi,
         telefoninumber: telefoninumber,
-        aadress: aadress,
       });
 
       window.location.reload();
@@ -68,16 +66,6 @@ export default function Klassid() {
                     placeholder="Telefoninumber"
                     value={telefoninumber}
                     onChange={(e) => setTelefoninumber(e.target.value)}
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Label className="text-center">AADRESS</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Aadress"
-                    value={aadress}
-                    onChange={(e) => setAadress(e.target.value)}
                   />
                 </Form.Group>
 

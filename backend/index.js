@@ -4,6 +4,7 @@ import db from './config/database.js';
 import router from './routes/index.js';
 import categoryModel from "./models/category.js"
 import tovarModel from "./models/tovar.js"
+import klassidModel from "./models/klassid.js"
 
 import cors from 'cors';
 import dotenv from 'dotenv';

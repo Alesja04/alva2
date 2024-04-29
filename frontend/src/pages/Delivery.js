@@ -79,7 +79,7 @@ export default function RegForm() {
 
                 <div className="d-flex justify-content-center">
                   <Button
-                    style={{ backgroundColor: "#A25F5F" }}
+                    style={{ backgroundColor: "#A25F5F", border: 0 }}
                     type="submit"
                     className="w-50"
                   >

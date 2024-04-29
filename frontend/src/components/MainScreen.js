@@ -8,7 +8,7 @@ export default function MainScreen() {
       style={{
         height: '980px',
         backgroundImage: 'url("../img/main.png")',
-         backgroundSize: "'cover',",
+         backgroundSize: 'cover',
       }}
     ></div>
   );
