@@ -1,7 +1,7 @@
 [
-    { "id": "1", "name": "MAGUSAD", "st": "#F4CCCC" },
-    { "id": "2", "name": "JOOGID", "st": "#DAD29B" },
-    { "id": "3", "name": "SALATID", "st": "#B5D6DA" },
+    { "id": "1", "name": "MAGUSAD", "st": "#FBCFB2" },
+    { "id": "2", "name": "JOOGID", "st": "#F2E1F2" },
+    { "id": "3", "name": "SALATID", "st": "#DAD29B" },
     { "id": "4", "name": "PASTA", "st": "#F4CCCC" },
     { "id": "5", "name": "SUUPISTED", "st": "#B5D6DA" }
   ]

@@ -10,8 +10,8 @@ const showOrders = (props) => {
   return (
     <div>
       <p>
-        <b>Count of products:</b> {props.orders.length}
-        <b> Total price:</b> {new Intl.NumberFormat().format(summa)} €
+        <b>Toodete arv:</b> {props.orders.length}
+        <b>Koguhind:</b> {new Intl.NumberFormat().format(summa)} €
       </p>
 
       <hr />
@@ -19,15 +19,15 @@ const showOrders = (props) => {
         <Order onDelete={props.onDelete} key={el.id} item={el} />
       ))}
       <hr />
-      <a href="/delivery" style={{ float: 'left', color: 'red', cursor: 'pointer' }}>
+      <a href="/delivery" style={{ float: 'left', color: '#20CA31', cursor: 'pointer',  padding: '5px', marginTop: '15px', fontSize:'18px' }}>
         Tellimine
       </a>
 
       <p
-        style={{ float: 'right', color: 'red', cursor: 'pointer' }}
+        style={{ float: 'right', color: '#F04040', cursor: 'pointer', paddingTop: '20px', fontSize:'17px' }}
         onClick={() => props.onClearCart()}
       >
-        Clear cart
+        Tühjendage ostukorv
       </p>
     </div>
   );
@@ -35,7 +35,7 @@ const showOrders = (props) => {
 const showNothing = () => {
   return (
     <div className="empty">
-      <h2>Your cart is empty</h2>
+      <h2>Teie ostukorv on tühi</h2>
     </div>
   );
 };
@@ -56,19 +56,20 @@ export default function Header(props) {
             <img src="../img/logo.png" alt="logo" width={130} height={50} />
           </Nav.Link>
 
-          <Nav.Link style={{paddingTop: '20px'}} href="/#meist">MEIST</Nav.Link>
-          <Nav.Link style={{paddingTop: '20px'}} href="/#menu">MENÜÜ</Nav.Link>
-          <Nav.Link style={{paddingTop: '20px'}} href="/#contact">KONTAKTID</Nav.Link>
-          <Nav.Link style={{paddingTop: '20px'}} href="/#reserveerimine">RESERVEERIMINE</Nav.Link>
-          
-          <Nav.Link href="/korzina">
-            <img src="../img/tar.png" alt="logo" width={60} height={50} />
+          <Nav.Link style={{ paddingTop: '20px',paddingLeft:'40px', fontSize:'20px' }} href="/#meist">MEIST</Nav.Link>
+          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',fontSize:'20px' }} href="/#menu">MENÜÜ</Nav.Link>
+          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',fontSize:'20px' }} href="/#contact">KONTAKTID</Nav.Link>
+          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',paddingRight:'40px',fontSize:'20px' }} href="/#reserveerimine">RESERVEERIMINE</Nav.Link>
+
+          <Nav.Link>
+            <img src="../img/tar.png" alt="tarelka" width={60} height={50} />
           </Nav.Link>
-          <span style={{paddingTop: '20px'}}
+          
+          <span style={{ paddingTop: '20px', fontSize:'20px' }}
             className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
             onClick={() => setCartOpen((cartOpen = !cartOpen))}
           >
-            Cart ({props.orders.length})
+            <b>Korv</b> ({props.orders.length})
           </span>
 
           {cartOpen && (

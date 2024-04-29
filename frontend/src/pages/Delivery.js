@@ -46,7 +46,7 @@ export default function RegForm({ clearCart }) {
     };
 
     try {
-      await axios.post(`http://localhost:5000/api/delivery/`, deliveryData);
+      await axios.post(`http://localhost:5000/delivery/`, deliveryData);
       // window.location.reload();
       setOrderSent(true); // Устанавливаем статус отправки заказа в true
       localStorage.removeItem('orders'); // Очищаем localStorage
@@ -61,7 +61,7 @@ export default function RegForm({ clearCart }) {
 
   return (
     <Container className="mt-3 mb-5" style={{ height: 'auto', minHeight: '680px' }}>
-      <h2 className="text-center mt-5">SINU TELLIMUS -N {dateNumber}</h2>
+      <h2 className="text-center mt-5">SINU TELLIMUS  №{dateNumber}</h2>
       <p className="text-center mt-1">
         <b>Tellimuse kuupäev: </b>
         {newDate}
@@ -79,9 +79,9 @@ export default function RegForm({ clearCart }) {
           </Container>
         </Alert>
       ) : (
-        <Row className="d-flex justify-content-center align-items-center">
+        <Row className="d-flex justify-content-center align-items-center" >
           <Col md={8} lg={6} xs={12}>
-            <Card className="shadow">
+            <Card className="shadow" style={{backgroundColor:'#E0D9CE'}}>
               <Card.Body>
                 <Form onSubmit={handleRegFormSubmit}>
                   <p className="text-center">{msg}</p>
@@ -125,12 +125,12 @@ export default function RegForm({ clearCart }) {
                     />
                   </Form.Group>
 
-                  <Table striped bordered hover size="sm">
+                  <Table striped bordered hover size="sm" style={{ border: '2px solid #FFFFFF' }}>
                     <thead>
                       <tr>
-                        <th>#ID</th>
-                        <th>Products</th>
-                        <th>Price</th>
+                        <th>ID</th>
+                        <th>Tooted</th>
+                        <th>Hind</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -145,16 +145,21 @@ export default function RegForm({ clearCart }) {
                         <td style={{ textAlign: 'center' }} colSpan={3}>
                           {/* Display total price */}
                           <span style={{ textAlign: 'center' }}>
-                            Count of products: {orders.length} &nbsp; Total price:{' '}
+                          Toodete arv: {orders.length} &nbsp; Koguhind:{' '}
                             {new Intl.NumberFormat().format(totalPrice)} €
                           </span>
                         </td>
                       </tr>
                     </tbody>
                   </Table>
-
                   <div className="d-flex justify-content-center">
-                    <Button style={{ backgroundColor: '#A25F5F' }} type="submit" className="w-50">
+                    <Button
+                      style={{color:'#000000', backgroundColor: 'transparent', transition: 'background-color 0.3s ease', borderColor:'#20CA31' }}
+                      type="submit"
+                      className="w-50"
+                      onMouseEnter={(e) => e.target.style.backgroundColor = '#20CA31'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                    >
                       Tellimine
                     </Button>
                   </div>

@@ -15,7 +15,7 @@ export default function Tooded(props) {
 
   useEffect(() => {
     const getProducts = async () => {
-      const response = await axios.get(`http://localhost:5000/api/products/categories/${id}`);
+      const response = await axios.get(`http://localhost:5000/products/categories/${id}`);
       setProducts(response.data);
     };
     getProducts();

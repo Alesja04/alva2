@@ -20,7 +20,10 @@ export default function Home() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() =>{
+  const [hoveredButton1, setHoveredButton1] = useState(false);
+  const [hoveredButton2, setHoveredButton2] = useState(false);
+
+  useEffect(() => {
     handleShow();
   }, [])
 
@@ -45,49 +48,54 @@ export default function Home() {
 
 
       <Modal show={show} onHide={handleClose} size="lg">
-  <Modal.Body style={{ position: 'relative' }}>
-    <img src="../img/master.png" alt="Master" style={{ width: '100%' }} />
+        <Modal.Body style={{ position: 'relative' }}>
+          <img src="../img/master.png" alt="Master" style={{ width: '100%' }} />
 
-    <Button
-      variant="primary"
-      onClick={handleClose}
-      a href='klassid'
-      style={{
-        position: 'absolute',
-        top: '85%',
-        left: '65%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: '#DFAE72',
-        color: '#000000',
-        border: 'none',
-        padding: '10px 30px',
-        fontSize: '16px',
-        borderRadius: '10px',
-      }}
-    >
-      ROHKEM
-    </Button>
+          <Button
+            variant="primary"
+            onClick={handleClose}
+            href='klassid'
+            style={{
+              position: 'absolute',
+              top: '85%',
+              left: '60%',
+              transform: 'translate(-50%, -50%)',
+              padding: '10px 30px',
+              fontSize: '16px',
+              backgroundColor: hoveredButton1 ? '#EEAE42' : 'transparent', // Желтый фон при наведении
+              borderColor: '#ffc107', // Цвет границы
+              color: hoveredButton1 ? '#000000' : '#ffc107', // Цвет текста
+              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
+            }}
+            onMouseEnter={() => setHoveredButton1(true)}
+            onMouseLeave={() => setHoveredButton1(false)}
+          >
+            <b>ROHKEM</b>
+          </Button>
 
-    <Button
-      variant="secondary"
-      onClick={handleClose}
-      style={{
-        position: 'absolute',
-        top: '85%',
-        left: '85%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: '#DFAE72',
-        color: '#000000',
-        border: 'none',
-        padding: '10px 30px',
-        fontSize: '16px',
-        borderRadius: '10px',
-      }}
-    >
-      KINNITATUD
-    </Button>
-  </Modal.Body>
-</Modal>
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            style={{
+              position: 'absolute',
+              top: '85%',
+              left: '85%',
+              width: '180px',
+              transform: 'translate(-50%, -50%)',
+              padding: '10px 30px',
+              fontSize: '16px',
+              backgroundColor: hoveredButton2 ? '#D9D9D9' : 'transparent', // серый фон при наведении
+              borderColor: '#000000', // Цвет границы
+              color: hoveredButton2 ? '#000000' : '#000000', // Цвет текста
+              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
+            }}
+            onMouseEnter={() => setHoveredButton2(true)}
+            onMouseLeave={() => setHoveredButton2(false)}
+          >
+            <b>KINNITATUD &#x2715;</b>
+          </Button>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

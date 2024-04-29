@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 // import Card from 'react-bootstrap/Card';
 
 export default function Reserveerimine() {
@@ -13,17 +13,16 @@ export default function Reserveerimine() {
         width: 'auto',
         backgroundSize: 'cover',
         fontFamily: 'Buda',
-        backgroundColor: '#D6D7D7',
+        backgroundColor: '#E6CCC8',
       }}
     >
       <Container>
         <Row>
           <Col sm="6">
-            <h1 style={{ textAlign: 'center', paddingTop: 50, paddingRight: 250 }}>
-              RESERVEERIMINE
+            <h1 style={{ textAlign: 'center', paddingTop: '50px' }}> RESERVEERIMINE
             </h1>
 
-            <p style={{ fontSize: 28, textAlign: 'justify', paddingTop: 50, paddingRight: 30 }}>
+            <p style={{ fontSize: 28, textAlign: 'center', paddingTop: 50, paddingRight: 30 }}>
               LÕUNASÖÖK
               <br />
               Laupäev ja pühapäev
@@ -40,13 +39,13 @@ export default function Reserveerimine() {
               <br />
             </p>
 
-            <Button
-              className="d-grid gap-2 col-6 mx-auto btn-outline-dark"
-              href=""
-              style={{ backgroundColor: 'rgb(255,255,255,0)' }}
+            <a
+              className="d-grid gap-2 col-6 mx-auto btn btn-outline-dark"
+              href="reserv"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0)', textDecoration: 'none' }}
             >
               TEE RESERVEERIMINE
-            </Button>
+            </a>
           </Col>
           <Col sm="6">
             <img src="../img/reserv.jpg" alt="reserveerimine" width={500} height="auto" />

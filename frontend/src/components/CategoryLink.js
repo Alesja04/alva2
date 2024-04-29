@@ -15,9 +15,20 @@ export default function CategoryLink() {
           {categories.map((data) => (
             <Col
               key={data.id}
-              style={{ padding: '10px 0', textAlign: 'center', borderBottom: '1px solid #ddd' }}
+              style={{ padding: '10px 0', textAlign: 'center', borderBottom: '3px solid #F5F5F5' }}
             >
-              <a href={`/tooded/${data.id}`}>{data.name}</a>
+              <a
+                style={{
+                  color: '#000000',
+                  fontSize: '25px',
+                  transition: 'color 0.3s ease'
+                }}
+                href={`/tooded/${data.id}`}
+                onMouseEnter={(e) => e.target.style.color = '#F5F5F5'}
+                onMouseLeave={(e) => e.target.style.color = '#000000'}
+              >
+                {data.name}
+              </a>
             </Col>
           ))}
         </Row>

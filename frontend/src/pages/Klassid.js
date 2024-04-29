@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Col, Button, Row, Container, Card, Form, Image } from "react-bootstrap";
+import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 
 export default function Klassid() {
   const [nimi, setNimi] = useState("");
@@ -18,7 +18,7 @@ export default function Klassid() {
         telefoninumber: telefoninumber,
       });
 
-    //   window.location.reload();
+      //   window.location.reload();
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -28,15 +28,26 @@ export default function Klassid() {
 
   return (
     <Container className="mt-1">
-     
-      <Row className="d-flex justify-content-center align-items-center">
+
+      <Row className="d-flex justify-content-center align-items-center" >
         <Col md={8} lg={6} xs={12}>
-          <Card className="shadow">
-            <Card.Header>
-                <h1 className="text-center mt-3">REGISTREERIMINE MEISTRIKLASSILE</h1>
-            </Card.Header>
-            <Card.Body> 
-                <Image src='../assets/klassid.png' alt='klassid'></Image>
+          <Card className="shadow" style={{ width: '700px', backgroundColor: "#F2D9B0" }}>
+
+            <Card.Body style={{ paddingLeft: '50px', paddingRight: '50px' }}>
+              <h1 className="text-center mt-3">TULE MEIE MEISTRIKLASSI!</h1>
+              <img src="../img/kru.png" alt="kruassan" style={{ height: '110px', position: 'absolute', top: '70px', left: '21px' }} />
+
+              <div style={{ textAlign: 'center', backgroundColor: '#FFFFFF', borderRadius: '15px', border: '2px solid #000000', marginTop: '30px' }}>
+                <br /><b><p>Meistriklassi programm hõlmab järgmist:</p>
+                  <ul style={{ textAlign: 'left', display: 'inline-block' }}>
+                    <li>Taina valmistamine</li>
+                    <li>Croissantide vormimine</li>
+                    <li>Õige küpsetamise saladused</li>
+                    <li>Ideed täidiste jaoks</li>
+                  </ul><br /><br />
+                  <p>Osalemise hind:<br />
+                    *Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi lõbusam!</p><br />
+                </b></div>
               <Form onSubmit={RegForm}>
                 <p className="has-text-centered">{msg}</p>
 
@@ -71,10 +82,10 @@ export default function Klassid() {
                 </Form.Group>
 
                 <div className="d-flex justify-content-center">
-                  <Button
-                    style={{ backgroundColor: "#A25F5F", border: "0" }}
+                  <Button 
+                    style={{ backgroundColor: 'rgb(238, 174, 66,0)'}}
                     type="submit"
-                    className="w-50"
+                    className="w-50 btn btn-outline-dark"
                   >
                     REGISTREERIMINE
                   </Button>
@@ -85,5 +96,9 @@ export default function Klassid() {
         </Col>
       </Row>
     </Container>
+
+
+
   );
 }
+

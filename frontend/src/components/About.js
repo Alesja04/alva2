@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 export default function About() {
-  //,  backgroundColor: '#D9C3B5',
   return (
     <Container
       id="meist"
@@ -21,9 +20,9 @@ export default function About() {
         </Col>
         <Col sm="6">
           <p style={{ fontSize: 30, textAlign: 'left', paddingTop: 50, paddingRight: 30 }}>
-          Edward Kalen on pikaajalise kogemusega ettevõtja.<br /><br />
-          Pärast hotellinduse juhtimise eriala lõpetamist töötas ta mitu aastat suurtes kohviku- ja restoranikettides, omandades väärtuslikke kogemusi juhtimise ja äriarenduse alal.<br /><br /> 
-          Kvaliteedile ja originaalsusele pühendudes lõi Edward Kalen ainulaadse kohviku, mis ei oleks mitte ainult koht, kus süüa, vaid ka kohtumis-, töö- ja inspiratsioonikoht
+            Edward Kalen on pikaajalise kogemusega ettevõtja.<br /><br />
+            Pärast hotellinduse juhtimise eriala lõpetamist töötas ta mitu aastat suurtes kohviku- ja restoranikettides, omandades väärtuslikke kogemusi juhtimise ja äriarenduse alal.<br /><br />
+            Kvaliteedile ja originaalsusele pühendudes lõi Edward Kalen ainulaadse kohviku, mis ei oleks mitte ainult koht, kus süüa, vaid ka kohtumis-, töö- ja inspiratsioonikoht
           </p>
         </Col>
       </Row>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Contact() {
-            
 
-return (
+
+  return (
     <div
       id="contact"
       style={{
@@ -14,14 +14,14 @@ return (
         width: 'auto',
         backgroundSize: 'cover',
         fontFamily: 'Buda',
-        backgroundColor: '#849D6F',
+        backgroundColor: '#AEC899',
       }}
     >
       <Container>
         <Row>
 
           <Col sm="6">
-        <img src="../img/contact.jpg" alt="kontakt" width={450} height="auto" />        
+            <img src="../img/contact.jpg" alt="kontakt" width={450} height="auto" />
 
           </Col>
           <Col sm="6">

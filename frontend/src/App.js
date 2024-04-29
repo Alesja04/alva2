@@ -22,7 +22,7 @@ export default class App extends Component {
 
   componentDidMount() {
     const getItems = async () => {
-      const response = await axios.get(`http://localhost:5000/api/products/`);
+      const response = await axios.get(`http://localhost:5000/products/`);
       this.setState({ items: response.data });
     };
     getItems();
