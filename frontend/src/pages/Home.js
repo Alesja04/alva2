@@ -44,43 +44,6 @@ export default function Home() {
       </section>
 
 
-      {/* <Modal show={show} onHide={handleClose} size="lg">
-        <Modal.Body>
-          <img src="../img/master.png" alt="Master" style={{ width: '100%' }} />
-        
-  
-        
-        
-        <Button 
-        a href='klassid'
-        variant="primary" 
-        onClick={handleClose}
-        style={{
-            backgroundColor: '#DFAE72', 
-            color: '#000000', 
-            border: 'none', 
-            padding: '10px 30px', 
-            fontSize: '16px', 
-            borderRadius: '10px'
-          }}>
-            ROHKEM
-          </Button>
-
-          <Button 
-          variant="secondary" 
-          onClick={handleClose}
-          style={{
-            backgroundColor: '#DFAE72', 
-            color: '#000000', 
-            border: 'none', 
-            padding: '10px 30px', 
-            fontSize: '16px', 
-            borderRadius: '10px'
-          }}>
-            KINNITATUD
-          </Button>
-</Modal.Body>
-      </Modal> */}
       <Modal show={show} onHide={handleClose} size="lg">
   <Modal.Body style={{ position: 'relative' }}>
     <img src="../img/master.png" alt="Master" style={{ width: '100%' }} />

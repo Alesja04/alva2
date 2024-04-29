@@ -8,7 +8,6 @@ export default function About() {
       id="meist"
       style={{
         paddingTop: 50,
-
         height: 'auto',
         width: 'auto',
         backgroundSize: 'cover',
@@ -22,8 +21,8 @@ export default function About() {
         </Col>
         <Col sm="6">
           <p style={{ fontSize: 30, textAlign: 'left', paddingTop: 50, paddingRight: 30 }}>
-          Edward Kalen on pikaajalise kogemusega ettevõtja.<br />
-          Pärast hotellinduse juhtimise eriala lõpetamist töötas ta mitu aastat suurtes kohviku- ja restoranikettides, omandades väärtuslikke kogemusi juhtimise ja äriarenduse alal.<br /> 
+          Edward Kalen on pikaajalise kogemusega ettevõtja.<br /><br />
+          Pärast hotellinduse juhtimise eriala lõpetamist töötas ta mitu aastat suurtes kohviku- ja restoranikettides, omandades väärtuslikke kogemusi juhtimise ja äriarenduse alal.<br /><br /> 
           Kvaliteedile ja originaalsusele pühendudes lõi Edward Kalen ainulaadse kohviku, mis ei oleks mitte ainult koht, kus süüa, vaid ka kohtumis-, töö- ja inspiratsioonikoht
           </p>
         </Col>

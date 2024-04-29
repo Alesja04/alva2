@@ -1,5 +1,6 @@
-import db from "../config/database.js";
-import { DataTypes, Model } from "sequelize";
+import db from '../config/database.js';
+import { DataTypes, Model } from 'sequelize';
+import Category from './category.js';
 class Tovar extends Model {}
 Tovar.init(
   {
@@ -15,10 +16,13 @@ Tovar.init(
   },
   {
     sequelize: db,
-    tableName: "tovar",
+    tableName: 'tovar',
     freezeTableName: true,
-    modelName: "Tovar",
+    modelName: 'Tovar',
     timestamp: true,
-  }
+  },
 );
+//определим связи между таблицами
+Tovar.belongsTo(Category, { foreignKey: 'category_id', as: 'category' });
+Category.hasMany(Tovar, { as: 'products', foreignKey: 'category_id' });
 export default Tovar;

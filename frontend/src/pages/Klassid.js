@@ -10,6 +10,7 @@ export default function Klassid() {
 
   const RegForm = async (e) => {
     e.preventDefault();
+    console.log("text")
     try {
       await axios.post(`http://localhost:5000/klassid/`, {
         nimi: nimi,
@@ -17,7 +18,7 @@ export default function Klassid() {
         telefoninumber: telefoninumber,
       });
 
-      window.location.reload();
+    //   window.location.reload();
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -32,7 +33,7 @@ export default function Klassid() {
         <Col md={8} lg={6} xs={12}>
           <Card className="shadow">
             <Card.Header>
-                <h1 className="text-center mt-3">SINU TELLIMUS</h1>
+                <h1 className="text-center mt-3">REGISTREERIMINE MEISTRIKLASSILE</h1>
             </Card.Header>
             <Card.Body> 
                 <Image src='../assets/klassid.png' alt='klassid'></Image>
@@ -71,7 +72,7 @@ export default function Klassid() {
 
                 <div className="d-flex justify-content-center">
                   <Button
-                    style={{ backgroundColor: "#A25F5F" }}
+                    style={{ backgroundColor: "#A25F5F", border: "0" }}
                     type="submit"
                     className="w-50"
                   >

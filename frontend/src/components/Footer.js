@@ -10,7 +10,7 @@ export default class Footer extends Component {
           fluid
           style={{
             backgroundColor: '#FFFFFF',
-            border: 'solid',
+            border: '1px solid #000000',
             color: '#000000',
             height: '60px',
             position: 'relative',

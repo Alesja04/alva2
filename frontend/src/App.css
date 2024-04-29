@@ -1,38 +1,98 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
+    text-align: center;
+  }
+  
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
   }
-  to {
-    transform: rotate(360deg);
+   /*header{
+   position: relative;
+  
+  }*/
+  header .shop-cart-button{
+    /*float: right;*/
+    cursor: pointer;
+    transition: color 500ms ease;
   }
-}
+  header  .shop-cart-button:hover,
+  header  .shop-cart-button:active
+  {
+    color: #dc3d3d;
+  }
+  header .shop-cart{
+   position: absolute;
+    margin-top:72px;/*60px*/
+   /* margin-left: 20%;/*25%*/
+    right: 20%; 
+    width: 300px;
+    /* min-height: 100px; */
+    background: #fafafa;
+    padding: 20px;
+    margin-bottom: 0;
+  }
+  header .shop-cart .empty h2{
+    font-size: 20px;
+    margin: 20px;
+  }
+  header .shop-cart .item{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    margin: right 20px;
+  }
+  header .shop-cart .item img{
+    width: 80px;
+    height: 80px;
+    float: left;
+    padding: 10px;  
+  }
+  header .shop-cart .item p{
+    color: #797979;
+    font-weight: 600;
+  }
+  .menucategory a {
+    color: #a5a7a9; /* Set the color of the link */
+    display: inline-block; /* Make the links appear inline */ 
+    text-decoration: none; /* Remove the underline */
+    font-size:large;
+    font-weight:400;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and text-shadow */
+  
+  }
+  .menucategory a:hover {
+    color: #ff6347; /* Change the color when hovered */  
+    text-decoration: none; /* Remove underline when hovered */
+   
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
