@@ -1,6 +1,6 @@
 import db from '../config/database.js';
 import { DataTypes, Model } from 'sequelize';
-class Delivery extends Model {}
+class Delivery extends Model { }
 
 Delivery.init(
   {

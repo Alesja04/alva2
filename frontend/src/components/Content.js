@@ -5,6 +5,8 @@ import Home from "../pages/Home.js";
 import Delivery from "../pages/Delivery.js";
 import Tooded from "../pages/Tooded.js";
 import Klassid from '../pages/Klassid.js';
+import Reserv from '../pages/Reserv.js';
+import AdminPage from "../pages/AdminPage.js";
 
 export class Content extends React.Component {
   render() {
@@ -30,7 +32,11 @@ export class Content extends React.Component {
             />
 
             <Route exact path="/klassid" element={<Klassid />} />
-          </Routes>
+
+            <Route exact path="/reserv" element={<Reserv />} />
+            <Route exact path="/admin" element={<AdminPage />} /> 
+          </Routes>  
+         
         </Router>
       </main>
     );

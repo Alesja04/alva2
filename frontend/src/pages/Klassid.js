@@ -38,16 +38,16 @@ export default function Klassid() {
               <img src="../img/kru.png" alt="kruassan" style={{ height: '110px', position: 'absolute', top: '70px', left: '21px' }} />
 
               <div style={{ textAlign: 'center', backgroundColor: '#FFFFFF', borderRadius: '15px', border: '2px solid #000000', marginTop: '30px' }}>
-                <br /><b><p>Meistriklassi programm hõlmab järgmist:</p>
-                  <ul style={{ textAlign: 'left', display: 'inline-block' }}>
+                <br /><b><h4>Meistriklassi programm hõlmab järgmist:</h4></b>
+                  <ul style={{ textAlign: 'left', display: 'inline-block', marginTop: '10px' }}>
                     <li>Taina valmistamine</li>
                     <li>Croissantide vormimine</li>
                     <li>Õige küpsetamise saladused</li>
                     <li>Ideed täidiste jaoks</li>
                   </ul><br /><br />
-                  <p>Osalemise hind:<br />
-                    *Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi lõbusam!</p><br />
-                </b></div>
+                 <h5>Osalemise hind:</h5> 
+                   <p> *Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi lõbusam!</p><br />
+                </div>
               <Form onSubmit={RegForm}>
                 <p className="has-text-centered">{msg}</p>
 

@@ -1,6 +1,6 @@
 import db from "../config/database.js";
 import { DataTypes, Model } from "sequelize";
-class User extends Model {}
+class User extends Model { }
 User.init(
   {
     id: {

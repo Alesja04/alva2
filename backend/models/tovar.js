@@ -1,7 +1,7 @@
 import db from '../config/database.js';
 import { DataTypes, Model } from 'sequelize';
 import Category from './category.js';
-class Tovar extends Model {}
+class Tovar extends Model { }
 Tovar.init(
   {
     id: {

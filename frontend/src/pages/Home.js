@@ -63,8 +63,8 @@ export default function Home() {
               padding: '10px 30px',
               fontSize: '16px',
               backgroundColor: hoveredButton1 ? '#EEAE42' : 'transparent', // Желтый фон при наведении
-              borderColor: '#ffc107', // Цвет границы
-              color: hoveredButton1 ? '#000000' : '#ffc107', // Цвет текста
+              borderColor: '#EEAE42', // Цвет границы
+              color: hoveredButton1 ? '#000000' : '#EEAE42', // Цвет текста
               transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
             }}
             onMouseEnter={() => setHoveredButton1(true)}
@@ -84,15 +84,15 @@ export default function Home() {
               transform: 'translate(-50%, -50%)',
               padding: '10px 30px',
               fontSize: '16px',
-              backgroundColor: hoveredButton2 ? '#D9D9D9' : 'transparent', // серый фон при наведении
+              backgroundColor: hoveredButton2 ? '#000000' : 'transparent', // серый фон при наведении
               borderColor: '#000000', // Цвет границы
-              color: hoveredButton2 ? '#000000' : '#000000', // Цвет текста
+              color: hoveredButton2 ?  '#EEAE42':'#000000' , // Цвет текста
               transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
             }}
             onMouseEnter={() => setHoveredButton2(true)}
             onMouseLeave={() => setHoveredButton2(false)}
           >
-            <b>KINNITATUD &#x2715;</b>
+            <b>SULGE &#x2715;</b>
           </Button>
         </Modal.Body>
       </Modal>

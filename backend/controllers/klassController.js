@@ -1,7 +1,7 @@
 import Klassid from "../models/klassid.js";
 
 export const create = async (req, res) => {
-    console.log("text")
+  console.log("text")
   try {
     await Klassid.create(req.body);
     res.json({

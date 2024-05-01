@@ -1,6 +1,6 @@
 import db from "../config/database.js";
 import { DataTypes, Model } from "sequelize";
-class Category extends Model {}
+class Category extends Model { }
 Category.init(
   {
     id: {
