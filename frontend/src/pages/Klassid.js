@@ -31,7 +31,7 @@ export default function Klassid() {
 
       <Row className="d-flex justify-content-center align-items-center" >
         <Col md={8} lg={6} xs={12}>
-          <Card className="shadow" style={{ width: '700px', backgroundColor: "#F2D9B0" }}>
+          <Card className="shadow" style={{ width: '700px', backgroundColor: "#F2D9B0", marginTop:'50px' }}>
 
             <Card.Body style={{ paddingLeft: '50px', paddingRight: '50px' }}>
               <h1 className="text-center mt-3">TULE MEIE MEISTRIKLASSI!</h1>
@@ -45,7 +45,7 @@ export default function Klassid() {
                     <li>Õige küpsetamise saladused</li>
                     <li>Ideed täidiste jaoks</li>
                   </ul><br /><br />
-                 <h5>Osalemise hind:</h5> 
+                 <h5>Osalemise hind: 10€</h5> 
                    <p> *Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi lõbusam!</p><br />
                 </div>
               <Form onSubmit={RegForm}>

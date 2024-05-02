@@ -34,7 +34,7 @@ export class Content extends React.Component {
             <Route exact path="/klassid" element={<Klassid />} />
 
             <Route exact path="/reserv" element={<Reserv />} />
-            <Route exact path="/admin" element={<AdminPage />} /> 
+            <Route exact path="/adminAlva" element={<AdminPage />} /> 
           </Routes>  
          
         </Router>

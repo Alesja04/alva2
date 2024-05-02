@@ -25,7 +25,6 @@ export default function Contact() {
           <Col sm="6">
             <h1 style={{ textAlign: 'center', paddingTop: 50 }}>VÕTA MEIEGA ÜHENDUST</h1>
             <p style={{ fontSize: 30, marginTop: 30, textAlign: 'right' }}>
-             <b>Võimalused meiega ühendust võtta:</b> <br />
 
              &#9990; Helista meile: Kui sul on küsimusi või soovid lauda broneerida, siis helista meile telefonil +372 658 956. Meie sõbralik meeskond aitab teid hea meelega!<br /><br />
 
