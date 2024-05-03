@@ -19,15 +19,15 @@ export default function Reserveerimine() {
       <Container>
         <Row>
           <Col sm="6">
-            <h1 style={{ textAlign: 'center', paddingTop: '50px' }}> RESERVEERIMINE
+            <h1 style={{ textAlign: 'center', paddingTop: 70 }}> RESERVEERIMINE
             </h1>
 
-            <p style={{ fontSize: 28, textAlign: 'center', paddingTop: 50, paddingRight: 30 }}>
+            <p style={{ fontSize: 28, textAlign: 'center', paddingTop: 80, paddingRight: 30 }}>
               LÕUNA SÖÖK
               <br />
               Laupäev ja pühapäev
               <br />
-              Broneerimine kell 12:00-13:30
+              Broneerimine kell 12:00-14:00
               <br />
               <br />
               <br />
@@ -35,7 +35,7 @@ export default function Reserveerimine() {
               <br />
               Neljapäevast Pühapäevani
               <br />
-              Broneerimine kell 18:00-20:45
+              Broneerimine kell 18:00-21:00
               <br />
             </p>
 
@@ -48,7 +48,7 @@ export default function Reserveerimine() {
             </a>
           </Col>
           <Col sm="6">
-            <img src="../img/reserv.jpg" alt="reserveerimine" width={500} height="auto" />
+            <img src="../img/reserv.jpg" alt="reserveerimine" width={600} height="auto" />
           </Col>
         </Row>
       </Container>
