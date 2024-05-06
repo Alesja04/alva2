@@ -18,3 +18,16 @@ export const getAllProducts = async (req, res) => {
     res.json({ message: error.message });
   }
 };
+
+export const deleteProduct = async (req, res) => {
+  const id = req.params.id;
+  await Tovar.destroy({where:{id:id}}) 
+  return res.json({ })
+}
+
+export const editProduct = async (req, res) => {
+  const id = req.params.id;
+  const {name, price}=req.body;
+  await Tovar.update({name:name, price:price}, {where:{id:id}})
+  return res.json({ })
+}

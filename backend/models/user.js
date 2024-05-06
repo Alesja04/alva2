@@ -9,7 +9,6 @@ User.init(
       primaryKey: true,
     },
     name: { type: DataTypes.STRING },
-    email: { type: DataTypes.STRING },
     password: { type: DataTypes.STRING },
     role: { type: DataTypes.STRING },
   },

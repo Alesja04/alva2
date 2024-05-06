@@ -26,7 +26,7 @@ export default function Contact() {
             <h1 style={{ textAlign: 'center', paddingTop: 50 }}>VÕTA MEIEGA ÜHENDUST</h1>
             <p style={{ fontSize: 30, marginTop: 30, textAlign: 'right' }}>
 
-             &#9990; Helista meile: Kui sul on küsimusi või soovid lauda broneerida, siis helista meile telefonil +372 658 956. Meie sõbralik meeskond aitab teid hea meelega!<br /><br />
+             &#9990; Helista meile: Kui sul on küsimusi või soovid lauda broneerida, siis helista meile telefonil<br /> +372 658 956. Meie sõbralik meeskond aitab teid hea meelega!<br /><br />
 
               &#128386; Kirjutage meile: Võite meiega ühendust võtta ka e-posti aadressil info@alva.ee. Vastame kõigile teie küsimustele ja päringutele nii kiiresti kui võimalik.<br /><br />
 

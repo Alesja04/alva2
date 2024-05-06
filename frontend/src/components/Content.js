@@ -7,6 +7,7 @@ import Tooded from "../pages/Tooded.js";
 import Klassid from '../pages/Klassid.js';
 import Reserv from '../pages/Reserv.js';
 import AdminPage from "../pages/AdminPage.js";
+import Menuadmin from "../pages/Menuadmin.js";
 
 export class Content extends React.Component {
   render() {
@@ -35,6 +36,7 @@ export class Content extends React.Component {
 
             <Route exact path="/reserv" element={<Reserv />} />
             <Route exact path="/adminAlva" element={<AdminPage />} /> 
+            <Route exact path="/adminMenu" element={<Menuadmin />} /> 
           </Routes>  
          
         </Router>
