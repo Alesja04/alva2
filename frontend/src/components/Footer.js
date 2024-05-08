@@ -21,7 +21,7 @@ export default class Footer extends Component {
 
       <a href="https://www.instagram.com/kohvik_alva/">
         <img src="../img/inst.png" alt="Instagram" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
-      </a>
+      </a>     
 
       <a href="https://www.facebook.com/profile.php?id=61559215046564">
         <img src="../img/face.png" alt="Facebook" style={{ width: '30px', height: '30px', marginRight: '10px' }} />

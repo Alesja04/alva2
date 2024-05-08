@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom"
 import { Nav, Navbar } from 'react-bootstrap';
 import Order from './Order';
 const showOrders = (props) => {
@@ -21,7 +21,9 @@ const showOrders = (props) => {
       <hr />
       <a href="/delivery" style={{ float: 'left', color: '#20CA31', cursor: 'pointer',  padding: '5px', marginTop: '15px', fontSize:'18px' }}>
         Tellimine
-      </a>
+      </a> 
+
+      {/* <Link to="/delivery" style={{ float: 'left', color: '#20CA31', cursor: 'pointer',  padding: '5px', marginTop: '15px', fontSize:'18px' }}>Tellimine</Link> */}
 
       <p
         style={{ float: 'right', color: '#F04040', cursor: 'pointer', paddingTop: '20px', fontSize:'17px' }}

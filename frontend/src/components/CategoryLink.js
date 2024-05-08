@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import categories from '../data/categories.json';
+import { Link } from "react-router-dom"
 
 export default function CategoryLink() {
   return (
@@ -17,7 +18,7 @@ export default function CategoryLink() {
               key={data.id}
               style={{ padding: '10px 0', textAlign: 'center', borderBottom: '3px solid #F5F5F5' }}
             >
-              <a
+              {/* <a
                 style={{
                   color: '#000000',
                   fontSize: '25px',
@@ -27,8 +28,16 @@ export default function CategoryLink() {
                 onMouseEnter={(e) => e.target.style.color = '#F5F5F5'}
                 onMouseLeave={(e) => e.target.style.color = '#000000'}
               >
-                {data.name}
-              </a>
+                
+              </a> */}
+
+              <Link to={"/tooded/"+data.id}  style={{
+                  color: '#000000',
+                  fontSize: '25px',
+                  transition: 'color 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.target.style.color = '#F5F5F5'}
+                onMouseLeave={(e) => e.target.style.color = '#000000'} >{data.name}</Link>
             </Col>
           ))}
         </Row>

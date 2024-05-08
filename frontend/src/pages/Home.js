@@ -7,6 +7,7 @@ import MainScreen from '../components/MainScreen';
 import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import {Link} from "react-router-dom"
 
 export default function Home() {
   const AboutRef = useRef();
