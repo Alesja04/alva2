@@ -7,7 +7,6 @@ import MainScreen from '../components/MainScreen';
 import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import {Link} from "react-router-dom"
 
 export default function Home() {
   const AboutRef = useRef();
@@ -26,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     handleShow();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -47,7 +46,6 @@ export default function Home() {
         <Reserveerimine />
       </section>
 
-
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Body style={{ position: 'relative' }}>
           <img src="../img/master.png" alt="Master" style={{ width: '100%' }} />
@@ -55,7 +53,7 @@ export default function Home() {
           <Button
             variant="primary"
             onClick={handleClose}
-            href='klassid'
+            href="klassid"
             style={{
               position: 'absolute',
               top: '85%',
@@ -66,7 +64,7 @@ export default function Home() {
               backgroundColor: hoveredButton1 ? '#EEAE42' : 'transparent', // Желтый фон при наведении
               borderColor: '#EEAE42', // Цвет границы
               color: hoveredButton1 ? '#000000' : '#EEAE42', // Цвет текста
-              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
+              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Плавный переход
             }}
             onMouseEnter={() => setHoveredButton1(true)}
             onMouseLeave={() => setHoveredButton1(false)}
@@ -87,8 +85,8 @@ export default function Home() {
               fontSize: '16px',
               backgroundColor: hoveredButton2 ? '#000000' : 'transparent', // серый фон при наведении
               borderColor: '#000000', // Цвет границы
-              color: hoveredButton2 ?  '#EEAE42':'#000000' , // Цвет текста
-              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease' // Плавный переход
+              color: hoveredButton2 ? '#EEAE42' : '#000000', // Цвет текста
+              transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Плавный переход
             }}
             onMouseEnter={() => setHoveredButton2(true)}
             onMouseLeave={() => setHoveredButton2(false)}

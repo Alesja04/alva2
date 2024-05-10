@@ -1,6 +1,6 @@
-import db from "../config/database.js";
-import { DataTypes, Model } from "sequelize";
-class User extends Model { }
+import db from '../config/database.js';
+import { DataTypes, Model } from 'sequelize';
+class User extends Model {}
 User.init(
   {
     id: {
@@ -9,15 +9,16 @@ User.init(
       primaryKey: true,
     },
     name: { type: DataTypes.STRING },
+    email: { type: DataTypes.STRING },
     password: { type: DataTypes.STRING },
     role: { type: DataTypes.STRING },
   },
   {
     sequelize: db,
-    tableName: "user",
+    tableName: 'user',
     freezeTableName: true,
-    modelName: "User",
+    modelName: 'User',
     timestamp: true,
-  }
+  },
 );
 export default User;

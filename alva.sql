@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Май 08 2024 г., 10:10
--- Версия сервера: 10.4.32-MariaDB
--- Версия PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: May 10, 2024 at 08:34 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `alva`
+-- Database: `alva`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `category` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `delivery`
+-- Table structure for table `delivery`
 --
 
 CREATE TABLE `delivery` (
@@ -66,39 +66,10 @@ CREATE TABLE `delivery` (
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `delivery`
---
-
-INSERT INTO `delivery` (`id`, `orderId`, `dateDelivery`, `nimi`, `perekonnanimi`, `telefoninumber`, `aadress`, `products`, `totalPrice`, `totalQuantity`, `createdAt`, `updatedAt`) VALUES
-(12, 1714462486, '2024-04-30 07:35:00', 'cfasc', 'afc', '34324', 'fvsx 56', '[{\"id\":13,\"name\":\"PASTA TOMATIGA\",\"img\":\"../img/toma.png\",\"price\":5,\"category_id\":\"4\",\"createdAt\":null,\"updatedAt\":null},{\"id\":3,\"name\":\"MANGOMAHL 0.25l\",\"img\":\"../img/mango.png\",\"price\":4,\"category_id\":\"2\",\"createdAt\":null,\"updatedAt\":null},{\"id\":10,\"name\":\"PUUVILJA SALAT\",\"img\":\"../img/puu.png\",\"price\":7,\"category_id\":\"3\",\"createdAt\":null,\"updatedAt\":null},{\"id\":14,\"name\":\"PASTA ŠAMPJONIDEGA\",\"img\":\"../img/shamp.png\",\"price\":7,\"category_id\":\"4\",\"createdAt\":null,\"updatedAt\":null},{\"id\":18,\"name\":\"NACHOS\",\"img\":\"../img/nach.png\",\"price\":5,\"category_id\":\"5\",\"createdAt\":null,\"updatedAt\":null},{\"id\":29,\"name\":\"SIBULARÕNGAD\",\"img\":\"../img/sib.png\",\"price\":5,\"category_id\":\"5\",\"createdAt\":null,\"updatedAt\":null},{\"id\":21,\"name\":\"MOZZARELLA PULGAD\",\"img\":\"../img/moz.png\",\"price\":5,\"category_id\":\"5\",\"createdAt\":null,\"updatedAt\":null}]', 38, 7, '2024-04-30 07:35:07', '2024-04-30 07:35:07');
-
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `klassid`
---
-
-CREATE TABLE `klassid` (
-  `id` int(11) NOT NULL,
-  `nimi` varchar(255) DEFAULT NULL,
-  `perekonnanimi` varchar(255) DEFAULT NULL,
-  `telefoninumber` varchar(255) DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Дамп данных таблицы `klassid`
---
-
-INSERT INTO `klassid` (`id`, `nimi`, `perekonnanimi`, `telefoninumber`, `createdAt`, `updatedAt`) VALUES
-(1, '', '', '', '2024-04-30 07:33:26', '2024-04-30 07:33:26');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tovar`
+-- Table structure for table `tovar`
 --
 
 CREATE TABLE `tovar` (
@@ -112,7 +83,7 @@ CREATE TABLE `tovar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `tovar`
+-- Dumping data for table `tovar`
 --
 
 INSERT INTO `tovar` (`id`, `name`, `img`, `price`, `category_id`, `createdAt`, `updatedAt`) VALUES
@@ -150,93 +121,82 @@ INSERT INTO `tovar` (`id`, `name`, `img`, `price`, `category_id`, `createdAt`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `delivery`
+-- Indexes for table `delivery`
 --
 ALTER TABLE `delivery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `klassid`
---
-ALTER TABLE `klassid`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tovar`
+-- Indexes for table `tovar`
 --
 ALTER TABLE `tovar`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Индексы таблицы `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `delivery`
+-- AUTO_INCREMENT for table `delivery`
 --
 ALTER TABLE `delivery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `klassid`
---
-ALTER TABLE `klassid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT для таблицы `tovar`
+-- AUTO_INCREMENT for table `tovar`
 --
 ALTER TABLE `tovar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT для таблицы `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `tovar`
+-- Constraints for table `tovar`
 --
 ALTER TABLE `tovar`
   ADD CONSTRAINT `tovar_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);

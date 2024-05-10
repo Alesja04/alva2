@@ -1,51 +1,34 @@
-import Users from "../models/user.js";
-// import bcrypt from 'bcrypt';
-// import jwt from 'jsonwebtoken';
+import Users from '../models/user.js';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 // //--------------login
 export const Login = async (req, res) => {
   try {
     const user = await Users.findAll({
       where: {
-        email: req.body.email,
+        name: req.body.name,
       },
     });
-    //----------------bcrypt password
-    const match = await bcrypt.compare(req.body.password, user[0].password);
-    if (!match) return res.status(400).json({ msg: "Wrong Password" });
+    //controll password
+    const isValidPass = await bcrypt.compare(req.body.password, user[0].password);
+    if (!isValidPass) return res.status(400).json({ msg: 'Wrong Password' });
+
     const userId = user[0].id;
     const name = user[0].name;
     const email = user[0].email;
-    //jwt.sign создание токена-исп для аутентификации/авторизации пользователей
-    const accessToken = jwt.sign(
-      { userId, name, email },
-      process.env.ACCESS_TOKEN_SECRET,
-      {
-        expiresIn: "15s",
-      }
-    );
-    const refreshToken = jwt.sign(
-      { userId, name, email },
-      process.env.REFRESH_TOKEN_SECRET,
-      {
-        expiresIn: "1d",
-      }
-    );
-    await Users.update(
-      { refresh_token: refreshToken },
-      {
-        where: {
-          id: userId,
-        },
-      }
-    );
-    res.cookie("refreshToken", refreshToken, {
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
+    const role = user[0].role;
+
+    //---jwt.sign создание токена-исп для аутентификации/авторизации пользователей
+    const token = jwt.sign({ userId, name, email, role }, 'Alva2004', {
+      expiresIn: '30d', //no valid 30d
     });
-    res.json({ accessToken });
+    //----------cookie
+    res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
+    //вывод данных
+    res.json({ userId, name, role, token });
   } catch (error) {
-    res.status(404).json({ msg: "Email not found" });
+    res.status(404).json({ msg: 'Name not found' });
   }
 };
 
@@ -66,8 +49,8 @@ export const Logout = async (req, res) => {
       where: {
         id: userId,
       },
-    }
+    },
   );
-  res.clearCookie("refreshToken");
+  res.clearCookie('refreshToken');
   return res.sendStatus(200);
 };

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom"
 import { Nav, Navbar } from 'react-bootstrap';
 import Order from './Order';
+
+import { jwtDecode } from 'jwt-decode';
+
 const showOrders = (props) => {
   let summa = 0;
   props.orders.forEach((el) => {
@@ -19,14 +21,28 @@ const showOrders = (props) => {
         <Order onDelete={props.onDelete} key={el.id} item={el} />
       ))}
       <hr />
-      <a href="/delivery" style={{ float: 'left', color: '#20CA31', cursor: 'pointer',  padding: '5px', marginTop: '15px', fontSize:'18px' }}>
+      <a
+        href="/delivery"
+        style={{
+          float: 'left',
+          color: '#20CA31',
+          cursor: 'pointer',
+          padding: '5px',
+          marginTop: '15px',
+          fontSize: '18px',
+        }}
+      >
         Tellimine
-      </a> 
-
-      {/* <Link to="/delivery" style={{ float: 'left', color: '#20CA31', cursor: 'pointer',  padding: '5px', marginTop: '15px', fontSize:'18px' }}>Tellimine</Link> */}
+      </a>
 
       <p
-        style={{ float: 'right', color: '#F04040', cursor: 'pointer', paddingTop: '20px', fontSize:'17px' }}
+        style={{
+          float: 'right',
+          color: '#F04040',
+          cursor: 'pointer',
+          paddingTop: '20px',
+          fontSize: '17px',
+        }}
         onClick={() => props.onClearCart()}
       >
         Tühjendage ostukorv
@@ -44,6 +60,40 @@ const showNothing = () => {
 
 export default function Header(props) {
   let [cartOpen, setCartOpen] = React.useState(false);
+  //------------------
+  const [state, setState] = React.useState(false);
+
+  const [role, setRole] = React.useState('');
+
+  const onClickLogout = () => {
+    if (window.confirm('Kas soovite kindlasti logida?')) {
+      // Удаление токена из localStorage
+      window.localStorage.removeItem('token');
+
+      window.location.assign('/');
+    }
+  };
+  //---------------------
+  React.useEffect(() => {
+    getMe();
+  }, []);
+
+  const getMe = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const decoded = jwtDecode(token);
+        setRole(decoded.role);
+        setState(true);
+      } else {
+        setState(false);
+      }
+    } catch (error) {
+      if (error.response) {
+      }
+    }
+  };
+
   return (
     <header id="header" className="header fixed-top header-scrolled mb-5">
       <Navbar
@@ -58,16 +108,42 @@ export default function Header(props) {
             <img src="../img/logo.png" alt="logo" width={130} height={50} />
           </Nav.Link>
 
-          <Nav.Link style={{ paddingTop: '20px',paddingLeft:'40px', fontSize:'20px' }} href="/#meist">MEIST</Nav.Link>
-          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',fontSize:'20px' }} href="/#menu">MENÜÜ</Nav.Link>
-          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',fontSize:'20px' }} href="/#contact">KONTAKTID</Nav.Link>
-          <Nav.Link style={{ paddingTop: '20px', paddingLeft:'40px',paddingRight:'40px',fontSize:'20px' }} href="/#reserveerimine">RESERVEERIMINE</Nav.Link>
+          <Nav.Link
+            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
+            href="/#meist"
+          >
+            MEIST
+          </Nav.Link>
+          <Nav.Link
+            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
+            href="/#menu"
+          >
+            MENÜÜ
+          </Nav.Link>
+          <Nav.Link
+            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
+            href="/#contact"
+          >
+            KONTAKTID
+          </Nav.Link>
+          <Nav.Link
+            style={{
+              paddingTop: '20px',
+              paddingLeft: '40px',
+              paddingRight: '40px',
+              fontSize: '20px',
+            }}
+            href="/#reserveerimine"
+          >
+            RESERVEERIMINE
+          </Nav.Link>
 
           <Nav.Link>
             <img src="../img/tar.png" alt="tarelka" width={60} height={50} />
           </Nav.Link>
-          
-          <span style={{ paddingTop: '20px', fontSize:'20px' }}
+
+          <span
+            style={{ paddingTop: '20px', fontSize: '20px' }}
             className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
             onClick={() => setCartOpen((cartOpen = !cartOpen))}
           >
@@ -78,6 +154,25 @@ export default function Header(props) {
             <div className="shop-cart nav-link">
               {props.orders.length > 0 ? showOrders(props) : showNothing()}
             </div>
+          )}
+
+          {state && role === 'admin' ? (
+            <>
+              <Nav.Link
+                style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
+                href="/adminmenu"
+              >
+                Manage Products
+              </Nav.Link>
+              <Nav.Link
+                style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
+                onClick={onClickLogout}
+              >
+                Logout
+              </Nav.Link>
+            </>
+          ) : (
+            <></>
           )}
         </Nav>
       </Navbar>
