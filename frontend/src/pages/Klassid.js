@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
+import baseURL from '../config';
 
 export default function Klassid() {
   const [nimi, setNimi] = useState('');
@@ -12,7 +13,7 @@ export default function Klassid() {
     e.preventDefault();
     console.log('text');
     try {
-      await axios.post(`http://localhost:5000/klassid/`, {
+      await axios.post(`${baseURL}/klassid/`, {
         nimi: nimi,
         perekonnanimi: perekonnanimi,
         telefoninumber: telefoninumber,

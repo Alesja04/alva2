@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Col, Button, Row, Container, Card, Form, Table, Alert } from 'react-bootstrap';
 import moment from 'moment';
+import baseURL from '../config';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -46,7 +47,7 @@ export default function RegForm({ clearCart }) {
     };
 
     try {
-      await axios.post(`http://localhost:5000/delivery/`, deliveryData);
+      await axios.post(`${baseURL}/delivery/`, deliveryData);
       // window.location.reload();
       setOrderSent(true); // Устанавливаем статус отправки заказа в true
       localStorage.removeItem('orders'); // Очищаем localStorage

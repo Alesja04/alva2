@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Toot from './Toot';
 import CategoryLink from '../components/CategoryLink';
 import categories from '../data/categories.json';
+import baseURL from '../config';
 
 export default function Tooded(props) {
   const [products, setProducts] = useState([]);
@@ -15,7 +16,7 @@ export default function Tooded(props) {
 
   useEffect(() => {
     const getProducts = async () => {
-      const response = await axios.get(`http://localhost:5000/products/categories/${id}`);
+      const response = await axios.get(`${baseURL}products/categories/${id}`);
       setProducts(response.data);
     };
     getProducts();

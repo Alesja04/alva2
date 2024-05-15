@@ -3,6 +3,7 @@ import axios from 'axios';
 //import { redirect } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
+import baseURL from '../config';
 
 export default function AdminPage() {
   const [name, setName] = useState('');
@@ -16,7 +17,7 @@ export default function AdminPage() {
     // console.log(email);
     // console.log(password);
     try {
-      const response = await axios.post(`http://localhost:5000/users/auth/login`, {
+      const response = await axios.post(`${baseURL}/users/auth/login`, {
         name: name,
         password: password,
       });
@@ -79,7 +80,7 @@ export default function AdminPage() {
                   </Button>
                 </div>
               </Form>
-              {/* <a href="http://localhost:5000/zajavka/" target="_blank">Register List</a> */}
+              {/* <a href="${baseURL}/zajavka/" target="_blank">Register List</a> */}
             </Card.Body>
           </Card>
         </Col>
