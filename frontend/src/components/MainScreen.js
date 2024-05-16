@@ -1,14 +1,13 @@
 import React from 'react';
-//import { Container } from 'react-bootstrap';
-//import background from '../assets/main.png';
 
 export default function MainScreen() {
   return (
     <div
       style={{
-        height: '980px',
+        height: '100vh', // Задаем высоту блока на всю высоту экрана
         backgroundImage: 'url("../img/main.png")',
         backgroundSize: 'cover',
+        backgroundPosition: 'center', // Центрируем фоновое изображение
       }}
     ></div>
   );

@@ -97,24 +97,25 @@ export default function Header(props) {
         sticky="top"
         expand="md"
         variant="white"
-        style={{ backgroundColor: '#F5F5F5', justifyContent: 'center' }} // Центрируем содержимое Navbar
+        style={{ backgroundColor: '#F5F5F5' }}
       >
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" style={{ marginLeft: 280 }}>
           <img src="../img/logo.png" alt="logo" width={130} height={50} />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ margin: 'auto' }}/>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto" style={{ margin: 'auto' }}> 
-            <Nav.Link style={{ fontSize: '20px' }} href="/#meist">
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" >
+          <Nav className="me-auto" style={{ marginLeft: '120px' }}>
+            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#meist">
               MEIST
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '20px' }} href="/#menu">
+            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#menu">
               MENÜÜ
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '20px' }} href="/#contact">
+            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#contact">
               KONTAKTID
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '20px' }} href="/#reserveerimine">
+            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#reserveerimine">
               RESERVEERIMINE
             </Nav.Link>
           </Nav>
@@ -125,6 +126,7 @@ export default function Header(props) {
           <span
             className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
             onClick={() => setCartOpen((cartOpen = !cartOpen))}
+            style={{ marginRight: 200 }}
           >
             <b>Korv</b> ({props.orders.length})
           </span>
@@ -137,10 +139,10 @@ export default function Header(props) {
           {state && role === 'admin' && (
             <>
               <Nav.Link style={{ fontSize: '20px' }} href="/adminmenu">
-                Manage Products
+                Toodete haldamine
               </Nav.Link>
               <Nav.Link style={{ fontSize: '20px' }} onClick={onClickLogout}>
-                Logout
+                Välja
               </Nav.Link>
             </>
           )}
