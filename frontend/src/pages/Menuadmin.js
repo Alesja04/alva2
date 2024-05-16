@@ -1,23 +1,27 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Modal, ModalHeader, Row, Col } from 'react-bootstrap';
-import baseURL from '../config';
+import categories from '../data/categories.json';
 
 export default function Menuadmin() {
   const [products, setProducts] = useState();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
   const [id, setId] = useState();
+ // const [category,setCategory]=useState();
 
   const [showModal, setShowModal] = useState(false);
 
   const getProducts = async () => {
-    const result = await axios.get(`${baseURL}/products`);
+    const result = await axios.get('http://localhost:5000/products');
     setProducts(result.data);
+    //console.log(result.data);
   };
   useEffect(() => {
     getProducts();
   }, []);
+
+
 
   const showmodal = (product) => {
     setShowModal(true);
@@ -34,7 +38,7 @@ export default function Menuadmin() {
   };
 
   const handleEdit = async () => {
-    await axios.patch(`${baseURL}/products/${id}`, {
+    await axios.patch('http://localhost:5000/products/' + id, {
       name: name,
       price: price,
     });
@@ -43,7 +47,7 @@ export default function Menuadmin() {
   };
 
   const handleDelete = async (productId) => {
-    await axios.delete(`${baseURL}/products/${productId}`);
+    await axios.delete('http://localhost:5000/products/' + productId);
     getProducts();
   };
 
@@ -51,13 +55,14 @@ export default function Menuadmin() {
     <>
       <Container>
         <h1 style={{ marginTop: 50 }}>Menüü muutmine</h1>
-        <table style={{ paddingTop: 20 }} class="table">
+        <table style={{ paddingTop: 20 }} className="table">
           <thead>
             <tr>
-              <th>Nimetus</th>
+              <th>Toode nimetus</th>
+              <th>Kategoori</th>
               <th>Hind</th>
               <th>Pilt</th>
-              <th>Actions</th>
+              <th>Tegevus</th>
             </tr>
           </thead>
           <tbody>
@@ -65,6 +70,7 @@ export default function Menuadmin() {
               return (
                 <tr key={product.id}>
                   <td>{product.name}</td>
+                  <td>{categories[(product.category_id)-1].name}</td>
                   <td>{product.price}</td>
                   <td>
                     <img src={product.img} alt="toot" width={60} height={50} />

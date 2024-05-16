@@ -11,15 +11,16 @@ export default function Klassid() {
 
   const RegForm = async (e) => {
     e.preventDefault();
-    console.log('text');
     try {
       await axios.post(`${baseURL}/klassid/`, {
         nimi: nimi,
         perekonnanimi: perekonnanimi,
         telefoninumber: telefoninumber,
       });
-
-      //   window.location.reload();
+      setMsg('Olete edukalt registreeritud!');
+      setNimi('');
+      setPerekonnanimi('');
+      setTelefoninumber('');
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -28,56 +29,31 @@ export default function Klassid() {
   };
 
   return (
-    <Container className="mt-1 mb-3">
-      <Row className="d-flex justify-content-center align-items-center">
+    <Container className="mt-3 mb-3">
+      <Row className="justify-content-center">
         <Col md={8} lg={6} xs={12}>
-          <Card
-            className="shadow"
-            style={{ width: '700px', backgroundColor: '#F2D9B0', marginTop: '50px' }}
-          >
+          <Card className="shadow-lg" style={{ backgroundColor: '#F2D9B0', marginTop: '50px'}}>
             <Card.Body style={{ paddingLeft: '50px', paddingRight: '50px' }}>
               <h1 className="text-center mt-3">TULE MEIE MEISTRIKLASSI!</h1>
-              <img
-                src="../img/kru.png"
-                alt="kruassan"
-                style={{ height: '110px', position: 'absolute', top: '70px', left: '21px' }}
-              />
+              <img src="../img/kru.png" alt="kruassan" className="img-fluid mb-3 mx-auto d-block" style={{ height: '110px', position: 'absolute', top: '80px', left: '5px' }}/>
 
-              <div
-                style={{
-                  textAlign: 'center',
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '15px',
-                  border: '2px solid #000000',
-                  marginTop: '30px',
-                }}
-              >
-                <br />
-                <b>
-                  <h4>Meistriklassi programm hõlmab järgmist:</h4>
-                </b>
-                <ul style={{ textAlign: 'left', display: 'inline-block', marginTop: '10px' }}>
+              <div className="text-center" style={{textAlign: 'center',backgroundColor: '#FFFFFF',borderRadius: '15px',border: '2px solid #000000', marginTop: '50px'}}>
+                <h4>Meistriklassi programm hõlmab järgmist:</h4>
+                <ul className="list text-left" style={{ textAlign: 'left', display: 'inline-block', marginTop: '10px' }}>
                   <li>Taina valmistamine</li>
                   <li>Croissantide vormimine</li>
                   <li>Õige küpsetamise saladused</li>
                   <li>Ideed täidiste jaoks</li>
                 </ul>
-                <br />
-                <br />
                 <h5>Osalemise hind: 10€</h5>
-                <p>
-                  {' '}
-                  *Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid
-                  croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi
-                  lõbusam!
-                </p>
-                <br />
+                <p>*Ära jäta kasutamata võimalust õppida, kuidas valmistada maitsvaid ja krõbedaid croissante nagu profi! Kutsu oma sõbrad ja pere, sest koos küpsetamine on veelgi lõbusam!</p>
               </div>
+
               <Form onSubmit={RegForm}>
-                <p className="has-text-centered">{msg}</p>
+                <p className="text-center">{msg}</p>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="text-center">NIMI</Form.Label>
+                  <Form.Label>NIMI</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Nimi"
@@ -87,7 +63,7 @@ export default function Klassid() {
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="text-center">PEREKONNANIMI</Form.Label>
+                  <Form.Label>PEREKONNANIMI</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Perekonnanimi"
@@ -97,20 +73,25 @@ export default function Klassid() {
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="text-center">TELEFONINUMBER</Form.Label>
+                  <Form.Label>TELEFONINUMBER</Form.Label>
                   <Form.Control
                     type="tel"
                     placeholder="Telefoninumber"
                     value={telefoninumber}
-                    onChange={(e) => setTelefoninumber(e.target.value)}
+                    onChange={(e) => {
+                      const input = e.target.value;
+                      if (/^\d*$/.test(input) || input === '') {
+                        setTelefoninumber(input);
+                      }
+                    }}
                   />
                 </Form.Group>
 
-                <div className="d-flex justify-content-center">
+                <div className="text-center">
                   <Button
                     style={{ backgroundColor: 'rgb(238, 174, 66,0)' }}
-                    type="submit"
-                    className="w-50 btn btn-outline-dark"
+                type="submit"
+                  className="w-50 btn btn-outline-dark"
                   >
                     REGISTREERIMINE
                   </Button>
