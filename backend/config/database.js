@@ -1,19 +1,19 @@
-    import { Sequelize } from 'sequelize';
-    import dotenv from 'dotenv';
+//     import { Sequelize } from 'sequelize';
+//     import dotenv from 'dotenv';
 
-    dotenv.config();
+//     dotenv.config();
 
-   const db = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
-    host: 'localhost',
-    dialect: 'mysql',
-   });
+//    const db = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
+//     host: 'localhost',
+//     dialect: 'mysql',
+//    });
 
-   export default db;
-//    import { Sequelize } from 'sequelize';
+//    export default db;
+   import { Sequelize } from 'sequelize';
 
-// const db = new Sequelize('alva', 'root', '', {
-//  host: 'localhost',
-//  dialect: 'mysql',
-// });
+const db = new Sequelize('alva', 'root', '', {
+ host: 'localhost',
+ dialect: 'mysql',
+});
 
-// export default db;
+export default db;

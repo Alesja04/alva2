@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import Order from './Order';
-
 import { jwtDecode } from 'jwt-decode';
 
 const showOrders = (props) => {
@@ -49,7 +48,8 @@ const showOrders = (props) => {
       </p>
     </div>
   );
-}; //
+};
+
 const showNothing = () => {
   return (
     <div className="empty">
@@ -60,20 +60,17 @@ const showNothing = () => {
 
 export default function Header(props) {
   let [cartOpen, setCartOpen] = React.useState(false);
-  //------------------
   const [state, setState] = React.useState(false);
-
   const [role, setRole] = React.useState('');
 
   const onClickLogout = () => {
     if (window.confirm('Kas soovite kindlasti logida?')) {
       // Удаление токена из localStorage
       window.localStorage.removeItem('token');
-
       window.location.assign('/');
     }
   };
-  //---------------------
+
   React.useEffect(() => {
     getMe();
   }, []);
@@ -100,50 +97,32 @@ export default function Header(props) {
         sticky="top"
         expand="md"
         variant="white"
-        className="justify-content-center"
-        style={{ backgroundColor: '#F5F5F5' }}
+        style={{ backgroundColor: '#F5F5F5', justifyContent: 'center' }} // Центрируем содержимое Navbar
       >
-        <Nav>
-          <Nav.Link href="/">
-            <img src="../img/logo.png" alt="logo" width={130} height={50} />
-          </Nav.Link>
-
-          <Nav.Link
-            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
-            href="/#meist"
-          >
-            MEIST
-          </Nav.Link>
-          <Nav.Link
-            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
-            href="/#menu"
-          >
-            MENÜÜ
-          </Nav.Link>
-          <Nav.Link
-            style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
-            href="/#contact"
-          >
-            KONTAKTID
-          </Nav.Link>
-          <Nav.Link
-            style={{
-              paddingTop: '20px',
-              paddingLeft: '40px',
-              paddingRight: '40px',
-              fontSize: '20px',
-            }}
-            href="/#reserveerimine"
-          >
-            RESERVEERIMINE
-          </Nav.Link>
-
+        <Navbar.Brand href="/">
+          <img src="../img/logo.png" alt="logo" width={130} height={50} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ margin: 'auto' }}/>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto" style={{ margin: 'auto' }}> 
+            <Nav.Link style={{ fontSize: '20px' }} href="/#meist">
+              MEIST
+            </Nav.Link>
+            <Nav.Link style={{ fontSize: '20px' }} href="/#menu">
+              MENÜÜ
+            </Nav.Link>
+            <Nav.Link style={{ fontSize: '20px' }} href="/#contact">
+              KONTAKTID
+            </Nav.Link>
+            <Nav.Link style={{ fontSize: '20px' }} href="/#reserveerimine">
+              RESERVEERIMINE
+            </Nav.Link>
+          </Nav>
           <Nav.Link>
             <img src="../img/tar.png" alt="tarelka" width={60} height={50} />
           </Nav.Link>
 
           <span
-            style={{ paddingTop: '20px', fontSize: '20px' }}
             className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
             onClick={() => setCartOpen((cartOpen = !cartOpen))}
           >
@@ -155,26 +134,17 @@ export default function Header(props) {
               {props.orders.length > 0 ? showOrders(props) : showNothing()}
             </div>
           )}
-
-          {state && role === 'admin' ? (
+          {state && role === 'admin' && (
             <>
-              <Nav.Link
-                style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
-                href="/adminmenu"
-              >
+              <Nav.Link style={{ fontSize: '20px' }} href="/adminmenu">
                 Manage Products
               </Nav.Link>
-              <Nav.Link
-                style={{ paddingTop: '20px', paddingLeft: '40px', fontSize: '20px' }}
-                onClick={onClickLogout}
-              >
+              <Nav.Link style={{ fontSize: '20px' }} onClick={onClickLogout}>
                 Logout
               </Nav.Link>
             </>
-          ) : (
-            <></>
           )}
-        </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </header>
   );
