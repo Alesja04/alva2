@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Modal, ModalHeader, Row, Col } from 'react-bootstrap';
 import categories from '../data/categories.json';
+import baseURL from '../config';
 
 export default function Menuadmin() {
   const [products, setProducts] = useState();
@@ -13,7 +14,7 @@ export default function Menuadmin() {
   const [showModal, setShowModal] = useState(false);
 
   const getProducts = async () => {
-    const result = await axios.get('http://localhost:5000/products');
+    const result = await axios.get(`${baseURL}/products`);
     setProducts(result.data);
     //console.log(result.data);
   };
@@ -38,7 +39,7 @@ export default function Menuadmin() {
   };
 
   const handleEdit = async () => {
-    await axios.patch('http://localhost:5000/products/' + id, {
+    await axios.patch(`${baseURL}/products/` + id, {
       name: name,
       price: price,
     });
@@ -47,7 +48,7 @@ export default function Menuadmin() {
   };
 
   const handleDelete = async (productId) => {
-    await axios.delete('http://localhost:5000/products/' + productId);
+    await axios.delete(`${baseURL}/products/` + productId);
     getProducts();
   };
 

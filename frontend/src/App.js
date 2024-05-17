@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-
+import baseURL from './config';
 import axios from 'axios';
 
 export default class App extends Component {
@@ -22,7 +22,7 @@ export default class App extends Component {
 
   componentDidMount() {
     const getItems = async () => {
-      const response = await axios.get(`http://localhost:5000/products/`);
+      const response = await axios.get(`${baseURL}/products/`);
       this.setState({ items: response.data });
     };
     getItems();
