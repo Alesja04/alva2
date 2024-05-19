@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import Order from './Order';
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode';
 
 const showOrders = (props) => {
   let summa = 0;
@@ -59,13 +59,12 @@ const showNothing = () => {
 };
 
 export default function Header(props) {
-  let [cartOpen, setCartOpen] = React.useState(false);
+  const [cartOpen, setCartOpen] = React.useState(false);
   const [state, setState] = React.useState(false);
   const [role, setRole] = React.useState('');
 
   const onClickLogout = () => {
     if (window.confirm('Kas soovite kindlasti logida?')) {
-      // Удаление токена из localStorage
       window.localStorage.removeItem('token');
       window.location.assign('/');
     }
@@ -87,6 +86,7 @@ export default function Header(props) {
       }
     } catch (error) {
       if (error.response) {
+        // Handle error
       }
     }
   };
@@ -99,53 +99,50 @@ export default function Header(props) {
         variant="white"
         style={{ backgroundColor: '#F5F5F5' }}
       >
-        <Navbar.Brand href="/" style={{ marginLeft: 280 }}>
+        <Navbar.Brand href="/" style={{ paddingLeft: '20px' }}>
           <img src="../img/logo.png" alt="logo" width={130} height={50} />
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" >
-          <Nav className="me-auto" style={{ marginLeft: '120px' }}>
-            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#meist">
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+          <Nav className="mx-auto" style={{ alignItems: 'center' }}>
+            <Nav.Link href="/#meist" style={{ paddingTop: '20px', paddingLeft: '20px', fontSize: '20px' }}>
               MEIST
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#menu">
+            <Nav.Link href="/#menu" style={{ paddingTop: '20px', paddingLeft: '20px', fontSize: '20px' }}>
               MENÜÜ
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#contact">
+            <Nav.Link href="/#contact" style={{ paddingTop: '20px', paddingLeft: '20px', fontSize: '20px' }}>
               KONTAKTID
             </Nav.Link>
-            <Nav.Link style={{ fontSize: '25px', marginLeft: 10 }} href="/#reserveerimine">
+            <Nav.Link href="/#reserveerimine" style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px', fontSize: '20px' }}>
               RESERVEERIMINE
             </Nav.Link>
+            <Nav.Link>
+              <img src="../img/tar.png" alt="tarelka" width={60} height={50} />
+            </Nav.Link>
+            <span
+              style={{ paddingTop: '20px', fontSize: '20px', cursor: 'pointer' }}
+              className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
+              onClick={() => setCartOpen(!cartOpen)}
+            >
+              <b>Korv</b> ({props.orders.length})
+            </span>
+            {cartOpen && (
+              <div className="shop-cart nav-link" style={{marginTop:'450px'}}>
+                {props.orders.length > 0 ? showOrders(props) : showNothing()}
+              </div>
+            )}
+            {state && role === 'admin' && (
+              <>
+                <Nav.Link href="/adminmenu" style={{ paddingTop: '20px', paddingLeft: '20px', fontSize: '20px' }}>
+                  Manage Products
+                </Nav.Link>
+                <Nav.Link onClick={onClickLogout} style={{ paddingTop: '20px', paddingLeft: '20px', fontSize: '20px' }}>
+                  Logout
+                </Nav.Link>
+              </>
+            )}
           </Nav>
-          <Nav.Link>
-            <img src="../img/tar.png" alt="tarelka" width={60} height={50} />
-          </Nav.Link>
-
-          <span
-            className={`nav-link shop-cart-button ${cartOpen && 'active'}`}
-            onClick={() => setCartOpen((cartOpen = !cartOpen))}
-            style={{ marginRight: 200 }}
-          >
-            <b>Korv</b> ({props.orders.length})
-          </span>
-
-          {cartOpen && (
-            <div className="shop-cart nav-link">
-              {props.orders.length > 0 ? showOrders(props) : showNothing()}
-            </div>
-          )}
-          {state && role === 'admin' && (
-            <>
-              <Nav.Link style={{ fontSize: '20px' }} href="/adminmenu">
-                Toodete haldamine
-              </Nav.Link>
-              <Nav.Link style={{ fontSize: '20px' }} onClick={onClickLogout}>
-                Välja
-              </Nav.Link>
-            </>
-          )}
         </Navbar.Collapse>
       </Navbar>
     </header>

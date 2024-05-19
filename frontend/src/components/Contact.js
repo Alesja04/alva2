@@ -10,17 +10,23 @@ export default function Contact() {
         width: 'auto',
         backgroundSize: 'cover',
         fontFamily: 'Buda',
-        backgroundColor: '#AEC899',
+        backgroundColor: '#AEC899'
       }}
     >
       <Container>
         <Row>
-          <Col sm="6">
-            <img src="../img/contact.jpg" alt="kontakt" width={630} height="auto" />
+          <Col xs={12} sm={6}>
+            <img 
+              src="../img/contact.jpg" 
+              alt="kontakt" 
+              width="100%" 
+              height="auto" 
+              style={{ maxWidth: 630 }}
+            />
           </Col>
-          <Col sm="6">
-            <h1 style={{ textAlign: 'center', paddingTop: 100 }}>VÕTA MEIEGA ÜHENDUST</h1>
-            <p style={{ fontSize: 30, marginTop: 30, textAlign: 'right' }}>
+          <Col xs={12} sm={6}>
+            <h1 style={{ textAlign: 'center', paddingTop: 80 }}>VÕTA MEIEGA ÜHENDUST</h1>
+            <p style={{ fontSize: 30, marginTop: 30, textAlign: 'left' }}>
               &#9990; Helista meile: Kui sul on küsimusi või soovid lauda broneerida, siis helista
               meile telefonil
               <br /> +372 658 956. Meie sõbralik meeskond aitab teid hea meelega!
@@ -31,7 +37,7 @@ export default function Contact() {
               võimalik.
               <br />
               <br />
-              <img style={{ width: '45px' }} src="./img/map.png" alt="map" />
+              <img style={{ width: '45px' }} src="../img/map.png" alt="map" />
               Kuidas meid leida: Asume aadressil Ida-Virumaa, Jõhvi, Kutse 13. Saate meid hõlpsasti
               kaardil üles leida ja meid külastada, millal iganes soovite.
               <br />

@@ -1,28 +1,21 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { Row, Col } from 'react-bootstrap';
-// import Card from 'react-bootstrap/Card';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Reserveerimine() {
   return (
     <div
       id="reserveerimine"
       style={{
-        // paddingTop: 50,
-        height: 'auto',
-        width: 'auto',
-        backgroundSize: 'cover',
         fontFamily: 'Buda',
         backgroundColor: '#E6CCC8',
+        
       }}
     >
       <Container>
-        <Row>
-          <Col sm="6">
-            <h1 style={{ textAlign: 'center', paddingTop: 70 }}> RESERVEERIMINE
-            </h1>
-
-            <p style={{ fontSize: 28, textAlign: 'center', paddingTop: 80, paddingRight: 30 }}>
+        <Row className="align-items-center"> {/* Центрируем содержимое вертикально */}
+          <Col sm={6}>
+            <h1 style={{ textAlign: 'center', paddingTop: 70 }}> RESERVEERIMINE </h1>
+            <p style={{ fontSize: 30, textAlign: 'center', paddingTop: 80, paddingRight: 30 }}>
               LÕUNA SÖÖK
               <br />
               Laupäev ja pühapäev
@@ -38,7 +31,6 @@ export default function Reserveerimine() {
               Broneerimine kell 18:00-21:00
               <br />
             </p>
-
             <a
               className="d-grid gap-2 col-6 mx-auto btn btn-outline-dark"
               href="/reserv"
@@ -47,8 +39,8 @@ export default function Reserveerimine() {
               TEE RESERVEERIMINE
             </a>
           </Col>
-          <Col sm="6">
-            <img src="../img/reserv.jpg" alt="reserveerimine" width={600} height="auto" />
+          <Col sm={6}>
+            <img src="../img/reserv.jpg" alt="reserveerimine" width="100%" height="auto" /> {/* Устанавливаем ширину изображения в 100% */}
           </Col>
         </Row>
       </Container>
