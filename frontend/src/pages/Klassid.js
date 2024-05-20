@@ -11,11 +11,16 @@ export default function Klassid() {
 
   const RegForm = async (e) => {
     e.preventDefault();
+    if (!nimi || !perekonnanimi || !telefoninumber) {
+      setMsg('Kõik väljad peavad olema täidetud.');
+      return;
+    }
+
     try {
       await axios.post(`${baseURL}/klassid/`, {
-        nimi: nimi,
-        perekonnanimi: perekonnanimi,
-        telefoninumber: telefoninumber,
+        nimi,
+        perekonnanimi,
+        telefoninumber,
       });
       setMsg('Olete edukalt registreeritud!');
       setNimi('');

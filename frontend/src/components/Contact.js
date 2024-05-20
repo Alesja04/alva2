@@ -13,16 +13,12 @@ export default function Contact() {
         backgroundColor: '#AEC899'
       }}
     >
-      <Container>
+      <Container style={{ paddingTop: '10px', paddingBottom: '50px'}}>
         <Row>
           <Col xs={12} sm={6}>
-            <img 
-              src="../img/contact.jpg" 
-              alt="kontakt" 
-              width="100%" 
-              height="auto" 
-              style={{ maxWidth: 630 }}
-            />
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2033.3485347233209!2d27.39583937785464!3d59.360521808522826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469465618ffcfeb3%3A0x7ff0dc0740dbf1a5!2sKutse%2013%2C%20J%C3%B5hvi%2C%2041533%20Ida-Viru%20maakond!5e0!3m2!1sru!2see!4v1716199327084!5m2!1sru!2see" width="800" height="600" style={{border:0, maxWidth: 630, marginTop:170 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
           </Col>
           <Col xs={12} sm={6}>
             <h1 style={{ textAlign: 'center', paddingTop: 80 }}>VÕTA MEIEGA ÜHENDUST</h1>

@@ -19,6 +19,8 @@ export default function RegForm({ clearCart }) {
   const [dateNumber] = useState(Date.parse(strDate) / 1000); // Текущая дата при первом рендеринге, сохраняем в состоянии
   const [orderSent, setOrderSent] = useState(false); // Статус отправки заказа
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({}); // Состояние для ошибок заполнения полей
+
   useEffect(() => {
     const ordersString = localStorage.getItem('orders');
     if (ordersString) {
@@ -30,8 +32,23 @@ export default function RegForm({ clearCart }) {
     }
   }, [orders]); // Dependency added to useEffect
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!nimi) newErrors.nimi = 'Nimi on kohustuslik';
+    if (!perekonnanimi) newErrors.perekonnanimi = 'Perekonnanimi on kohustuslik';
+    if (!telefoninumber) newErrors.telefoninumber = 'Telefoninumber on kohustuslik';
+    if (!aadress) newErrors.aadress = 'Aadress on kohustuslik';
+    return newErrors;
+  };
+
   const handleRegFormSubmit = async (e) => {
     e.preventDefault();
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     const newDate = moment().format('YYYY-MM-DD hh:mm'); // Вызываем moment только при отправке заказа
 
     const deliveryData = {
@@ -48,8 +65,7 @@ export default function RegForm({ clearCart }) {
 
     try {
       await axios.post(`${baseURL}/delivery/`, deliveryData);
-      // window.location.reload();
-      setOrderSent(true); // Устанавливаем статус отправки заказа в true
+      setOrderSent(true);
       localStorage.removeItem('orders'); // Очищаем localStorage
       setOrders([]); // Очищаем массив orders после отправки заказа
       clearCart();
@@ -68,11 +84,9 @@ export default function RegForm({ clearCart }) {
         {newDate}
       </p>
       {orderSent ? (
-        // Показываем сообщение "It's ok" если заказ отправлен
         <Alert variant="success" className="mt-3">
           <Container style={{ textAlign: 'center' }}>
             <h4>Tellimus on saadetud!</h4>
-
             <hr />
             <Button variant="success" className="mt-3" onClick={() => navigate('/tooded/1')}>
              Uus tellimus
@@ -93,7 +107,11 @@ export default function RegForm({ clearCart }) {
                       placeholder="Nimi"
                       value={nimi}
                       onChange={(e) => setNimi(e.target.value)}
+                      isInvalid={!!errors.nimi}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.nimi}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <Form.Group className="mb-3">
@@ -103,7 +121,11 @@ export default function RegForm({ clearCart }) {
                       placeholder="Perekonnanimi"
                       value={perekonnanimi}
                       onChange={(e) => setPerekonnanimi(e.target.value)}
+                      isInvalid={!!errors.perekonnanimi}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.perekonnanimi}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <Form.Group className="mb-3">
@@ -113,7 +135,11 @@ export default function RegForm({ clearCart }) {
                       placeholder="Telefoninumber"
                       value={telefoninumber}
                       onChange={(e) => setTelefoninumber(e.target.value)}
+                      isInvalid={!!errors.telefoninumber}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.telefoninumber}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <Form.Group className="mb-3">
@@ -123,13 +149,16 @@ export default function RegForm({ clearCart }) {
                       placeholder="Aadress"
                       value={aadress}
                       onChange={(e) => setAadress(e.target.value)}
+                      isInvalid={!!errors.aadress}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.aadress}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <Table striped bordered hover size="sm" style={{ border: '2px solid #FFFFFF' }}>
                     <thead>
                       <tr>
-                        <th>ID</th>
                         <th>Tooted</th>
                         <th>Hind</th>
                       </tr>
@@ -137,14 +166,12 @@ export default function RegForm({ clearCart }) {
                     <tbody>
                       {orders.map((data, index) => (
                         <tr key={index}>
-                          <td>{data.id}</td>
                           <td>{data.name}</td>
                           <td>{data.price} €</td>
                         </tr>
                       ))}
                       <tr>
                         <td style={{ textAlign: 'center' }} colSpan={3}>
-                          {/* Display total price */}
                           <span style={{ textAlign: 'center' }}>
                           Toodete arv: {orders.length} &nbsp; Koguhind:{' '}
                             {new Intl.NumberFormat().format(totalPrice)} €
