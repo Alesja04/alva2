@@ -38,7 +38,7 @@
   <li><b><i>JavaScript</i></b> - язык программирования.</li>
   <li><b><i>NodeJS</i></b> - платформа для выполнения JavaScript.</li>
   <li><b><i>Express</i></b> - фреймворк web-приложений для NodeJs.</li>
-  <li><b><i>MariaDb</i></b> - сервер для базы данных.</li>
+  <li><b><i>MariaDb</i></b> - база данных.</li>
   <li><b><i>Sequelize</i></b> - ORM для реляционных баз данных.</li>
 </ul>
 </p>
